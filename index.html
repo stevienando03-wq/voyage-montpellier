@@ -60,12 +60,12 @@
 
   <header class="hero">
     <h1>🚆 Sud de France — le circuit sans voiture</h1>
-    <div class="sub">Paris → Montpellier → Nîmes → Arles → Avignon → Paris · fin juillet 2026 · 2 voyageurs · 100 % train</div>
+    <div class="sub">Paris → Montpellier → Nîmes → Arles → Avignon → Paris · fin juillet 2026 · 2 voyageurs · bus longue distance + trains régionaux</div>
     <div class="chips">
       <span class="chip">🚄 Aller-retour <b>open-jaw</b> (zéro retour en arrière)</span>
       <span class="chip">🛏️ <b>4 nuits gratuites</b> à Montpellier</span>
       <span class="chip">🚗 <b>0 voiture</b> · tout en train/bus/tram</span>
-      <span class="chip">💶 ≈ <b>400–900 €</b> /2 pers selon transport</span>
+      <span class="chip">💶 ≈ <b>400–550 €</b> /2 pers (option tout-bus)</span>
       <span class="chip">🔴 À fuir : <b>1ᵉʳ août</b></span>
     </div>
   </header>
@@ -81,21 +81,22 @@
   <h2>📍 D'où on part, et pourquoi</h2>
   <div class="grid g2">
     <div class="card">
-      <h3 style="margin-top:0">Départ : Paris Gare de Lyon</h3>
-      <p>C'est votre ville, et c'est <b>le seul hub direct</b> vers tout le Sud-Est. OUIGO et TGV Inoui y partent vers Montpellier <b>et</b> Avignon, sans correspondance.</p>
+      <h3 style="margin-top:0">Départ : Paris, en FlixBus</h3>
+      <p>Choix retenu : <b>tout-bus</b>, le moins cher. FlixBus relie Paris au Sud sans correspondance, jour et nuit.</p>
       <ul class="clean">
-        <li><b>Aller</b> → Montpellier (~3h15)</li>
-        <li><b>Retour</b> → depuis Avignon TGV (~2h40)</li>
+        <li><b>Aller</b> → Montpellier (~8–10 h, dès ~20 €/pers)</li>
+        <li><b>Retour</b> → depuis Avignon (~8 h, dès ~26 €/pers, 8 bus/jour)</li>
       </ul>
+      <p class="note">Arrêt parisien selon l'horaire (souvent Paris-Bercy / Porte de Charenton) — à vérifier sur le billet.</p>
     </div>
     <div class="card">
-      <h3 style="margin-top:0">⚠️ Le piège des gares de Montpellier</h3>
-      <p>Montpellier a <b>2 gares</b> et OUIGO utilise parfois la mauvaise :</p>
+      <h3 style="margin-top:0">🚌 Arrêt à Montpellier : Sabines</h3>
+      <p>FlixBus s'arrête à la <b>gare routière Sabines</b> (210 av. du Colonel Pavelet), pas en centre-ville.</p>
       <ul class="clean">
-        <li><b>Saint-Roch</b> = centre-ville, 200 m de la Comédie. <span class="tag t-green">à privilégier</span></li>
-        <li><b>Sud de France</b> = en périphérie, +20 min de tram L1.</li>
+        <li>Reliée au centre par le <b>tram L2</b> (arrêt Sabines) → Comédie en ~15 min.</li>
+        <li>Garde 1,60 € par personne pour le ticket de tram à l'arrivée.</li>
       </ul>
-      <p class="note">Au moment de réserver, vérifie « Saint-Roch » dans le libellé du billet.</p>
+      <p class="note">Astuce : un <b>bus de nuit</b> (arrivée au petit matin) t'économise une nuit d'hôtel et une journée de trajet.</p>
     </div>
   </div>
 
@@ -117,7 +118,7 @@
       <!-- retour open-jaw : arc Avignon -> Paris -->
       <path d="M880,230 C880,70 300,40 70,180" fill="none" stroke="#4aa8ff" stroke-width="2.5"
             stroke-dasharray="2 7" marker-end="url(#arr)"/>
-      <text x="470" y="58" text-anchor="middle" fill="#7fc1ff" font-size="13" font-style="italic">retour OUIGO direct · Avignon → Paris ~2h40 (dès 19 €)</text>
+      <text x="470" y="58" text-anchor="middle" fill="#7fc1ff" font-size="13" font-style="italic">retour FlixBus · Avignon → Paris ~8 h (dès 26 €) · 8 bus/jour</text>
 
       <!-- ligne principale -->
       <line x1="70" y1="230" x2="880" y2="230" stroke="#33414f" stroke-width="6" stroke-linecap="round"/>
@@ -152,7 +153,7 @@
       <!-- Avignon (depart retour) -->
       <g><circle cx="880" cy="230" r="13" fill="#1c2733" stroke="#4aa8ff" stroke-width="3"/>
         <text x="880" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Avignon</text>
-        <text x="880" y="288" text-anchor="middle" font-size="11" fill="#9fb0c0">gare du retour</text></g>
+        <text x="880" y="288" text-anchor="middle" font-size="11" fill="#9fb0c0">arrêt bus retour</text></g>
 
       <!-- excursions -->
       <g><circle cx="225" cy="330" r="9" fill="#2bb673"/><text x="225" y="353" text-anchor="middle" font-size="12" fill="#cfe9dc">Sète · 25 min</text></g>
@@ -163,7 +164,7 @@
       <!-- segments labels -->
       <text x="405" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">TER 30 min</text>
       <text x="625" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">TER 30 min</text>
-      <text x="180" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">OUIGO 3h15</text>
+      <text x="180" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">FlixBus ~8-10 h</text>
     </svg>
     <p class="note">Tout le trajet est faisable <b>sans voiture</b> : TGV/OUIGO entre Paris et la région, TER liO entre les villes (15 trains/jour sur l'axe), bus liO B21 pour le Pont du Gard, tram pour les plages.</p>
   </div>
@@ -193,7 +194,7 @@
       <tr><td><b>TGV Inoui + Carte Avantage</b><div class="src">49 €/an/pers, −30 %</div></td><td>plafonné <b>89 €</b> max</td><td>~3h15</td><td>Le plafond protège du surge : jamais plus de 89 €/trajet même fin juillet. Confort + souplesse. Rentable dès ~3 trajets.</td></tr>
       <tr><td><b>Bus FlixBus</b><div class="src">BlaBlaCar Bus en voie d'arrêt</div></td><td><b>20 → 35 €</b></td><td>~8–10 h</td><td>De loin le moins cher. Mais une journée entière de trajet, de nuit souvent.</td></tr>
     </table>
-    <div class="verdict"><b>Ma reco quand OUIGO grimpe :</b> prends <b>2 cartes Avantage (98 € à deux)</b> → tes 4 trajets longue distance sont plafonnés à 89 € chacun, souvent moins avec le −30 %. Tu plafonnes le risque. <b>Si le budget prime sur le confort</b> → FlixBus à l'aller (~25 €/pers) et train au retour : le meilleur compromis prix/fatigue.</div>
+    <div class="verdict"><b>✅ Option retenue : tout-bus (mini budget).</b> FlixBus aller ET retour, ~20–35 €/pers le trajet → environ <b>100–140 € de transport longue distance pour vous deux</b>. On accepte ~8–10 h de route (idéalement de nuit pour gagner une nuit d'hôtel). <br><span class="note">Plan B si tu changes d'avis : 2 cartes Avantage (98 €) plafonnent le TGV à 89 €/trajet — confort en ~3h15.</span></div>
     <p class="note">💡 Astuce open-jaw : compare aussi <b>Paris→Nîmes</b> et <b>Paris→Avignon</b> — selon le jour, l'une est moins chère que Paris→Montpellier. Tu entres par la moins chère, ça ne change pas le circuit.</p>
   </div>
 
@@ -232,21 +233,23 @@
   </div>
 
   <div class="card">
-    <div class="kpi"><span class="big" style="color:var(--gold)">≈ 400 € → 900 €</span><span class="note">total 2 pers., ~9 jours — selon transport &amp; date de résa (hors resto/visites)</span></div>
+    <div class="kpi"><span class="big" style="color:var(--gold)">≈ 400 – 550 €</span><span class="note">option tout-bus retenue · 2 pers. · ~9 jours (hors resto/visites)</span></div>
     <table style="margin-top:6px">
-      <tr><th>Scénario</th><th class="r">Total ~2 pers.</th></tr>
-      <tr><td><b>Éco</b> — bus A/R + logement réservé tôt</td><td class="r">~400–500 €</td></tr>
-      <tr><td><b>Équilibré</b> — bus aller / train retour (Avantage) + logement juillet</td><td class="r">~550–650 €</td></tr>
-      <tr><td><b>Confort</b> — TGV A/R + logement juillet</td><td class="r">~750–900 €</td></tr>
+      <tr><th>Poste (scénario tout-bus)</th><th class="r">Total ~2 pers.</th></tr>
+      <tr><td>FlixBus aller + retour (4 trajets)</td><td class="r">100–140 €</td></tr>
+      <tr><td>Déplacements internes + bus 121 (fixe)</td><td class="r">~75 €</td></tr>
+      <tr><td>Logement Nîmes ×2 + Arles ×2 (Montpellier gratuit)</td><td class="r">220–340 €</td></tr>
+      <tr><td><b>Total</b></td><td class="r"><b>≈ 400–550 €</b></td></tr>
     </table>
-    <p class="note">+ 75 € de déplacements internes (fixes) dans chaque scénario. L'appart gratuit de Montpellier économise <b>~280 €</b> (4 nuits).</p>
+    <p class="note">L'appart gratuit de Montpellier économise <b>~280 €</b> (4 nuits). Le bus de nuit peut encore retirer 1 nuit d'hôtel.</p>
+    <p class="note">Autres scénarios pour mémoire : <b>bus aller / train retour</b> ~550–650 € · <b>TGV A/R confort</b> ~750–900 €.</p>
     <div class="warnbox"><b>Honnêteté sur les chiffres :</b> les lignes « fixes » sont des tarifs publics vérifiés (juin 2026). Le transport longue distance et le logement dépendent de la date et du remplissage — <u>impossible à garantir sans simuler vos dates réelles</u>. Donne-moi les 2 dates exactes et je sors le prix au billet près.</div>
   </div>
 
   <!-- ROADMAP -->
   <h2>🗓️ La road map — jour par jour (8 jours)</h2>
   <div class="card">
-    <div class="day"><div class="d">Mar 21</div><div class="city">Montpellier</div><div class="p">OUIGO depuis Paris · installation · soirée Place de la Comédie + Promenade du Peyrou (coucher de soleil)</div><div class="m">🚄 OUIGO</div></div>
+    <div class="day"><div class="d">Lun 20→Mar 21</div><div class="city">Montpellier</div><div class="p">FlixBus de nuit depuis Paris (gagne 1 nuit d'hôtel) · arrivée Sabines au matin + tram L2 · installation · soirée Comédie + Peyrou</div><div class="m">🚌 FlixBus nuit</div></div>
     <div class="day"><div class="d">Mer 22</div><div class="city">Montpellier</div><div class="p">L'Écusson (vieille ville), Musée Fabre, marché · 🛏️ nuit gratuite</div><div class="m">🚶 à pied</div></div>
     <div class="day"><div class="d">Jeu 23</div><div class="city">→ Sète</div><div class="p">Sète à la journée : canaux, mont Saint-Clair, tielle + plage au retour · 🛏️ nuit gratuite</div><div class="m">🚆 TER 25 min</div></div>
     <div class="day"><div class="d">Ven 24</div><div class="city">→ Aigues-Mortes</div><div class="p">Remparts médiévaux + salins roses (Camargue) · dernière nuit gratuite à Montpellier</div><div class="m">🚊 tram+bus</div></div>
@@ -254,7 +257,7 @@
     <div class="day"><div class="d">Dim 26</div><div class="city">→ Pont du Gard</div><div class="p">Pont du Gard en bus ligne 121 : aqueduc UNESCO + baignade dans le Gardon (accès gratuit) · retour Nîmes ou direct Arles</div><div class="m">🚌 bus 121</div></div>
     <div class="day"><div class="d">Lun 27</div><div class="city">Arles</div><div class="p">Arènes, théâtre antique, Van Gogh, Fondation LUMA · 🛏️ nuit Arles</div><div class="m">🚆 TER 20 min</div></div>
     <div class="day"><div class="d">Mar 28</div><div class="city">→ Avignon</div><div class="p">Avignon à la journée : Palais des Papes, Pont Saint-Bénézet · 🛏️ dernière nuit (Arles)</div><div class="m">🚆 TER 20 min</div></div>
-    <div class="day"><div class="d">Mer 29-30</div><div class="city">→ Paris</div><div class="p">Marge / matinée libre · retour OUIGO depuis Avignon TGV (avant le 1ᵉʳ août !)</div><div class="m">🚄 OUIGO</div></div>
+    <div class="day"><div class="d">Mer 29</div><div class="city">→ Paris</div><div class="p">Matinée libre à Avignon · retour FlixBus depuis Avignon (~8 h) · ou bus de nuit pour dormir en route (avant le 1ᵉʳ août !)</div><div class="m">🚌 FlixBus</div></div>
     <p class="note"><b>Version courte (4–5 jours) :</b> Montpellier (2 j, gratuit) → Nîmes + Pont du Gard (1 j) → Arles + Avignon (1 j) → retour Avignon. <br><b>Variante Ouest :</b> remplacer Nîmes/Arles/Avignon par <b>Narbonne → Carcassonne</b> (cité médiévale UNESCO, 1h de train) et rentrer via Carcassonne/Toulouse.</p>
   </div>
 
@@ -274,7 +277,8 @@
       <h3 style="margin-top:0">Définitions</h3>
       <ul class="clean">
         <li><b>Open-jaw</b> : arriver dans une ville et repartir d'une autre, sans refaire le trajet en sens inverse. Moins cher, moins de temps perdu.</li>
-        <li><b>OUIGO</b> : TGV low-cost SNCF, dès 19 €, billet 100 % mobile, bagages limités.</li>
+        <li><b>FlixBus</b> : autocar longue distance low-cost, dès ~20 €, ~8–10 h Paris↔Sud. Arrêt Montpellier = Sabines (tram L2). <b>Option retenue.</b></li>
+        <li><b>Carte Avantage</b> (plan B) : 49 €/an, −30 % et plafond 89 € sur TGV Inoui. Utile si on repasse au train.</li>
         <li><b>TER liO</b> : trains régionaux d'Occitanie, lents mais très bon marché (5–15 €). ⚠️ <b>billets à 1 € suspendus en juillet-août.</b></li>
         <li><b>Bus ligne 121</b> : car liO Gard reliant Nîmes ↔ Pont du Gard ↔ Uzès (~55 min, 2 € le trajet).</li>
       </ul>
