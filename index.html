@@ -6,76 +6,113 @@
 <title>Voyage Sud de France — Ines & Steve</title>
 <style>
   :root{
-    --bg:#0f1720;--card:#18222e;--card2:#1f2b38;--ink:#f1f5f9;--muted:#a7b6c5;
-    --line:#2a3744;--green:#2bb673;--orange:#f0883e;--blue:#4aa8ff;--gold:#e8b84b;--red:#e5534b;
-    --ines:#e879b9;--steve:#4aa8ff;
+    --bg:#0e1620;--card:#18222e;--card2:#202c3a;--ink:#eef4fa;--muted:#9fb1c2;
+    --line:#283544;--green:#34c285;--orange:#f0883e;--blue:#5bb0ff;--gold:#ecc05a;--red:#e5685f;
+    --ines:#ec84c0;--steve:#5bb0ff;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:#0e1620;color:var(--ink);
-    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.65}
-  .wrap{max-width:820px;margin:0 auto;padding:26px 18px 80px}
-  header.hero{text-align:center;padding:14px 0}
-  .hero h1{margin:0;font-size:30px}
-  .hero .sub{color:var(--muted);margin-top:8px;font-size:15px}
-  h2{font-size:22px;margin:38px 0 14px;display:flex;align-items:center;gap:10px}
-  h3{font-size:17px;margin:18px 0 6px;color:var(--gold)}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:18px}
-  .big5{list-style:none;margin:0;padding:0}
-  .big5 li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
-  .big5 li:last-child{border-bottom:none}
-  .big5 .ic{font-size:22px;min-width:30px;text-align:center}
-  table{width:100%;border-collapse:collapse;font-size:15px}
-  th,td{padding:11px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;font-size:16.5px;line-height:1.75}
+  .wrap{max-width:760px;margin:0 auto;padding:30px 20px 90px}
+
+  header.hero{text-align:center;padding:22px 0 10px}
+  .hero h1{margin:0;font-size:31px;letter-spacing:.3px}
+  .hero .sub{color:var(--muted);margin-top:12px;font-size:15px}
+
+  h2{font-size:23px;margin:56px 0 18px;padding-top:14px;border-top:1px solid var(--line);
+     scroll-margin-top:14px;display:flex;align-items:center;gap:10px}
+  h3{font-size:17px;margin:22px 0 8px;color:var(--gold)}
+  p{margin:12px 0}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;
+        padding:24px 26px;margin-bottom:22px}
+  .card + .card{margin-top:-4px}
+
+  /* sommaire */
+  .toc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:560px){.toc{grid-template-columns:1fr}}
+  .toc a{display:block;background:var(--card2);border:1px solid var(--line);border-radius:11px;
+         padding:11px 14px;color:var(--ink);text-decoration:none;font-size:15px}
+  .toc a:hover{border-color:var(--blue);background:#1b2c3f}
+
+  /* guide */
+  .guide .g{display:flex;gap:14px;padding:12px 0;align-items:flex-start}
+  .guide .g + .g{border-top:1px solid var(--line)}
+  .num{background:var(--blue);color:#06121f;font-weight:800;min-width:30px;height:30px;
+       border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+
+  .big5 li{display:flex;gap:14px;padding:14px 0;font-size:16.5px}
+  .big5 li + li{border-top:1px solid var(--line)}
+  .big5 .ic{font-size:24px;min-width:32px;text-align:center;flex:none}
+  ul.big5{list-style:none;margin:0;padding:0}
+
+  table{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+  th,td{padding:12px 11px;text-align:left;border-bottom:1px solid var(--line)}
   th{color:var(--muted);font-weight:600;font-size:13px}
   td.r,th.r{text-align:right;white-space:nowrap}
   .tot td{border-top:2px solid var(--line);border-bottom:none;font-weight:700;font-size:16px}
-  .tag{display:inline-block;border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600}
-  .t-green{background:#143a2c;color:#6ee7af}.t-red{background:#3a1715;color:#ff8a82}
-  .t-gold{background:#3a3214;color:#ffd766}
-  svg{width:100%;height:auto;display:block;border-radius:12px;background:#0b141d;margin-top:6px}
-  .guide{counter-reset:step}
-  .guide .g{display:flex;gap:14px;padding:10px 0;align-items:flex-start}
-  .guide .num{counter-increment:step;background:var(--blue);color:#06121f;font-weight:800;
-    min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-  .guide .num::before{content:counter(step)}
-  .day{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
-  .day:last-child{border-bottom:none}
-  .day .d{min-width:104px;font-weight:700;color:var(--gold);font-size:14px}
+
+  .tag{display:inline-block;border-radius:7px;padding:3px 10px;font-size:13px;font-weight:600}
+  .t-green{background:#123a2b;color:#74e6ad}.t-red{background:#3a1916;color:#ff9189}
+  .t-gold{background:#3a3216;color:#ffd873}
+
+  svg{width:100%;height:auto;display:block;border-radius:14px;background:#0b141d;margin-top:8px}
+
+  .day{display:flex;gap:14px;padding:16px 0}
+  .day + .day{border-top:1px solid var(--line)}
+  .day .d{min-width:108px;font-weight:700;color:var(--gold);font-size:14px}
   .day .p{flex:1}
-  .note{font-size:14px;color:var(--muted);margin-top:10px}
-  .verdict{border-left:4px solid var(--green);background:#11271d;padding:12px 16px;border-radius:10px;margin-top:12px}
-  .warn{border-left:4px solid var(--red);background:#2c1614;padding:12px 16px;border-radius:10px;margin-top:12px}
+
+  .note{font-size:14px;color:var(--muted);margin-top:14px}
+  .verdict{border-left:4px solid var(--green);background:#102a1f;padding:14px 18px;border-radius:11px;margin-top:16px}
+  .warn{border-left:4px solid var(--red);background:#2c1715;padding:14px 18px;border-radius:11px;margin-top:16px}
+  .info{border-left:4px solid var(--blue);background:#102539;padding:14px 18px;border-radius:11px;margin-top:16px}
+
+  /* fiches villes */
+  .city-card{border-left:5px solid var(--blue)}
+  .city-card.free{border-left-color:var(--gold)}
+  .city-card.day{border-left-color:var(--green)}
+  .howto{font-size:14.5px;color:#bfe0ff;background:#0f2336;border:1px solid #5bb0ff33;
+         border-radius:10px;padding:9px 13px;display:block;margin:10px 0}
+  .acts{margin:14px 0 0;padding-left:22px}
+  .acts li{margin:9px 0}
+  .acts li b{color:#e9f0f7}
+  .price{font-size:14.5px;color:#cfe6ff;background:#0f2336;border:1px solid #5bb0ff2e;
+         border-radius:10px;padding:10px 13px;margin-top:14px}
+  .food{font-size:14.5px;color:#ffd980;background:#2a2414;border-radius:10px;padding:10px 13px;margin-top:12px}
+  .time{font-size:13.5px;color:var(--muted);margin-top:12px}
+
+  /* checklists */
+  ul.check{list-style:none;margin:8px 0 0;padding:0}
+  ul.check li{padding:4px 0}
+  ul.check label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;padding:8px 10px;
+                 border-radius:10px}
+  ul.check label:hover{background:var(--card2)}
+  ul.check input{width:21px;height:21px;margin-top:2px;flex:none;accent-color:var(--green);cursor:pointer}
+  ul.check input:checked + span{color:var(--muted);text-decoration:line-through}
 
   /* tracker */
-  .form{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:8px}
-  .form input,.form select,.form button{font-size:16px;padding:11px 12px;border-radius:10px;
-    border:1px solid var(--line);background:var(--card2);color:var(--ink);font-family:inherit}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .form{display:grid;gap:12px;margin-bottom:10px}
+  .form input,.form select,.form button{font-size:16px;padding:13px 14px;border-radius:11px;
+    border:1px solid var(--line);background:var(--card2);color:var(--ink);font-family:inherit;width:100%}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .btn{background:var(--blue);color:#06121f;font-weight:700;border:none;cursor:pointer}
   .btn:hover{filter:brightness(1.08)}
   .btn-mini{background:none;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:0 4px}
   .who-ines{color:var(--ines);font-weight:700}.who-steve{color:var(--steve);font-weight:700}
   .empty{text-align:center;color:var(--muted);padding:18px;font-style:italic}
-  .settle{font-size:20px;font-weight:800;text-align:center;padding:16px;border-radius:12px;
-    background:#11271d;border:1px solid #2bb67355;margin-top:14px}
+  .settle{font-size:20px;font-weight:800;text-align:center;padding:18px;border-radius:13px;
+    background:#102a1f;border:1px solid #34c28555;margin-top:16px}
   .settle.zero{background:var(--card2);border-color:var(--line)}
+  .pill{font-size:12px;padding:2px 9px;border-radius:7px;background:var(--card2);border:1px solid var(--line)}
+  .clear{background:none;border:1px solid var(--line);color:var(--muted);border-radius:9px;
+    padding:9px 14px;cursor:pointer;font-size:13px;margin-top:12px}
   .mini{font-size:13px;color:var(--muted)}
-  .pill{font-size:12px;padding:2px 8px;border-radius:6px;background:var(--card2);border:1px solid var(--line)}
-  .clear{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;
-    padding:7px 12px;cursor:pointer;font-size:13px;margin-top:8px}
-  footer{text-align:center;color:#5d6e7e;font-size:13px;margin-top:36px}
-  .acts{margin:10px 0 0;padding-left:20px}
-  .acts li{margin:7px 0}
-  .acts li b{color:#e7eef5}
-  .howto{font-size:14px;color:#9fd0ff;background:#10243a;border:1px solid #4aa8ff44;
-    border-radius:8px;padding:7px 11px;display:block;margin:2px 0 4px}
-  .food{font-size:14px;color:#ffd766;margin-top:10px;background:#2a2412;border-radius:8px;padding:7px 11px}
-  .time{font-size:13px;color:var(--muted);margin-top:6px}
-  .price{font-size:14px;color:#bfe0ff;background:#10243a;border:1px solid #4aa8ff33;
-    border-radius:8px;padding:8px 11px;margin-top:9px}
-  .city-card{border-left:4px solid var(--blue)}
-  .city-card.free{border-left-color:var(--gold)}
-  .city-card.day{border-left-color:var(--green)}
+  .back{display:inline-block;margin-top:10px;font-size:13px;color:var(--muted);text-decoration:none}
+
+  footer{text-align:center;color:#5d6e7e;font-size:13px;margin-top:48px;line-height:1.6}
+  a{color:var(--blue)}
 </style>
 </head>
 <body>
@@ -83,23 +120,40 @@
 
   <header class="hero">
     <h1>🌅 Voyage Sud de France</h1>
-    <div class="sub">Ines &amp; Steve · fin juillet 2026 · Paris → Montpellier → Nîmes → Arles → Avignon · 100 % bus & train, zéro voiture</div>
+    <div class="sub">Ines &amp; Steve · fin juillet 2026<br>Paris → Montpellier → Nîmes → Arles → Avignon · 100 % bus &amp; train, zéro voiture</div>
   </header>
 
-  <!-- GUIDE DE LECTURE -->
+  <!-- SOMMAIRE -->
+  <div class="card">
+    <h2 style="margin-top:6px;border-top:none;padding-top:0">🧭 Sommaire — clique pour aller à une section</h2>
+    <div class="toc">
+      <a href="#essentiel">⭐ L'essentiel</a>
+      <a href="#trajet">🗺️ Le trajet</a>
+      <a href="#deplacer">🚌 Se déplacer (bus + TER)</a>
+      <a href="#dates">📅 Les bonnes dates</a>
+      <a href="#meteo">🌡️ Météo &amp; valise</a>
+      <a href="#villes">🎟️ Que faire ville par ville</a>
+      <a href="#marches">🛒 Jours de marché</a>
+      <a href="#romance">💞 Idées romantiques</a>
+      <a href="#programme">🗓️ Programme jour par jour</a>
+      <a href="#budget">💶 Le budget</a>
+      <a href="#checklist">✅ Avant de partir</a>
+      <a href="#pratique">📱 Applis &amp; infos pratiques</a>
+      <a href="#tracker">💸 Tracker de dépenses</a>
+      <a href="#notice">📒 Notice &amp; définitions</a>
+    </div>
+  </div>
+
+  <!-- GUIDE -->
   <div class="card guide">
-    <h2 style="margin-top:0">📖 Comment lire cette page</h2>
-    <div class="g"><div class="num"></div><div><b>L'essentiel</b> — les 5 points à retenir.</div></div>
-    <div class="g"><div class="num"></div><div><b>La carte &amp; comment se déplacer</b> — le trajet, le bus pour Paris↔Sud, le TER entre les villes.</div></div>
-    <div class="g"><div class="num"></div><div><b>Les dates</b> — les bons jours pour partir.</div></div>
-    <div class="g"><div class="num"></div><div><b>🎟️ Que faire ville par ville</b> — toutes les activités en détail, les spécialités à goûter, le temps conseillé.</div></div>
-    <div class="g"><div class="num"></div><div><b>Le programme jour par jour</b> — quoi faire, quel jour.</div></div>
-    <div class="g"><div class="num"></div><div><b>Le budget prévu</b> — combien ça coûte à deux.</div></div>
-    <div class="g"><div class="num"></div><div><b>💸 Le tracker de dépenses</b> — pendant le voyage, vous notez qui paie quoi ; la page calcule <b>qui rembourse combien à l'autre</b>.</div></div>
+    <h3 style="margin-top:0">📖 Comment lire cette page</h3>
+    <div class="g"><div class="num">1</div><div>Survole le <b>sommaire</b> ci-dessus pour sauter où tu veux.</div></div>
+    <div class="g"><div class="num">2</div><div>Les sections avec des <b>cases à cocher</b> (valise, avant de partir) gardent en mémoire ce que tu coches.</div></div>
+    <div class="g"><div class="num">3</div><div>Le <b>tracker de dépenses</b>, tout en bas, calcule qui rembourse combien à l'autre.</div></div>
   </div>
 
   <!-- ESSENTIEL -->
-  <h2>⭐ L'essentiel en 5 points</h2>
+  <h2 id="essentiel">⭐ L'essentiel en 5 points</h2>
   <div class="card">
     <ul class="big5">
       <li><span class="ic">🚌</span><div><b>Tout en bus (FlixBus).</b> Le moins cher : ~100–140 € à deux l'aller-retour. Idéalement de nuit pour gagner une nuit d'hôtel.</div></li>
@@ -110,97 +164,112 @@
     </ul>
   </div>
 
-  <!-- CARTE -->
-  <h2>🗺️ Le trajet</h2>
+  <!-- TRAJET -->
+  <h2 id="trajet">🗺️ Le trajet</h2>
   <div class="card">
     <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
       <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
-        <path d="M0,0 L6,3 L0,6 Z" fill="#4aa8ff"/></marker></defs>
-      <!-- retour -->
-      <path d="M720,190 C720,60 240,40 60,150" fill="none" stroke="#4aa8ff" stroke-width="2.5"
+        <path d="M0,0 L6,3 L0,6 Z" fill="#5bb0ff"/></marker></defs>
+      <path d="M720,190 C720,60 240,40 60,150" fill="none" stroke="#5bb0ff" stroke-width="2.5"
             stroke-dasharray="2 7" marker-end="url(#arr)"/>
-      <text x="390" y="52" text-anchor="middle" fill="#7fc1ff" font-size="13" font-style="italic">retour FlixBus · Avignon → Paris ~8 h</text>
-      <!-- ligne -->
+      <text x="390" y="50" text-anchor="middle" fill="#8fc6ff" font-size="13" font-style="italic">retour FlixBus · Avignon → Paris ~8 h</text>
       <line x1="60" y1="190" x2="720" y2="190" stroke="#33414f" stroke-width="6" stroke-linecap="round"/>
-      <!-- gares -->
-      <g><circle cx="60" cy="190" r="11" fill="#1f2b38" stroke="#4aa8ff" stroke-width="3"/>
-        <text x="60" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Paris</text></g>
-      <g><circle cx="240" cy="190" r="14" fill="#e8b84b" stroke="#fff" stroke-width="2"/>
-        <text x="240" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#ffe7a3">Montpellier</text>
-        <text x="240" y="156" text-anchor="middle" font-size="11" fill="#e8b84b">4 nuits · GRATUIT</text></g>
-      <g><circle cx="430" cy="190" r="12" fill="#4aa8ff" stroke="#fff" stroke-width="2"/>
-        <text x="430" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Nîmes</text>
-        <text x="430" y="242" text-anchor="middle" font-size="11" fill="#a7b6c5">2 nuits</text></g>
-      <g><circle cx="580" cy="190" r="12" fill="#4aa8ff" stroke="#fff" stroke-width="2"/>
-        <text x="580" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Arles</text>
-        <text x="580" y="242" text-anchor="middle" font-size="11" fill="#a7b6c5">2 nuits</text></g>
-      <g><circle cx="720" cy="190" r="12" fill="#1f2b38" stroke="#4aa8ff" stroke-width="3"/>
-        <text x="720" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Avignon</text>
-        <text x="720" y="242" text-anchor="middle" font-size="11" fill="#a7b6c5">retour</text></g>
-      <!-- excursions -->
-      <line x1="240" y1="190" x2="240" y2="280" stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5"/>
-      <g><circle cx="240" cy="280" r="8" fill="#2bb673"/>
-        <text x="240" y="303" text-anchor="middle" font-size="12" fill="#cfe9dc">Sète · Aigues-Mortes (journée)</text></g>
-      <line x1="430" y1="190" x2="430" y2="110" stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5"/>
-      <g><circle cx="430" cy="110" r="8" fill="#2bb673"/>
-        <text x="430" y="100" text-anchor="middle" font-size="12" fill="#cfe9dc">Pont du Gard · bus 121</text></g>
+      <g><circle cx="60" cy="190" r="11" fill="#202c3a" stroke="#5bb0ff" stroke-width="3"/>
+        <text x="60" y="228" text-anchor="middle" font-size="14" font-weight="700" fill="#a9d6ff">Paris</text></g>
+      <g><circle cx="240" cy="190" r="14" fill="#ecc05a" stroke="#fff" stroke-width="2"/>
+        <text x="240" y="168" text-anchor="middle" font-size="14" font-weight="700" fill="#ffe7a3">Montpellier</text>
+        <text x="240" y="153" text-anchor="middle" font-size="11" fill="#ecc05a">4 nuits · GRATUIT</text></g>
+      <g><circle cx="430" cy="190" r="12" fill="#5bb0ff" stroke="#fff" stroke-width="2"/>
+        <text x="430" y="228" text-anchor="middle" font-size="14" font-weight="700" fill="#a9d6ff">Nîmes</text>
+        <text x="430" y="244" text-anchor="middle" font-size="11" fill="#9fb1c2">2 nuits</text></g>
+      <g><circle cx="580" cy="190" r="12" fill="#5bb0ff" stroke="#fff" stroke-width="2"/>
+        <text x="580" y="228" text-anchor="middle" font-size="14" font-weight="700" fill="#a9d6ff">Arles</text>
+        <text x="580" y="244" text-anchor="middle" font-size="11" fill="#9fb1c2">2 nuits</text></g>
+      <g><circle cx="720" cy="190" r="12" fill="#202c3a" stroke="#5bb0ff" stroke-width="3"/>
+        <text x="720" y="228" text-anchor="middle" font-size="14" font-weight="700" fill="#a9d6ff">Avignon</text>
+        <text x="720" y="244" text-anchor="middle" font-size="11" fill="#9fb1c2">retour</text></g>
+      <line x1="240" y1="190" x2="240" y2="285" stroke="#34c28566" stroke-width="2.5" stroke-dasharray="5 5"/>
+      <g><circle cx="240" cy="285" r="8" fill="#34c285"/>
+        <text x="240" y="308" text-anchor="middle" font-size="12" fill="#cfe9dc">Sète · Aigues-Mortes (journée)</text></g>
+      <line x1="430" y1="190" x2="430" y2="108" stroke="#34c28566" stroke-width="2.5" stroke-dasharray="5 5"/>
+      <g><circle cx="430" cy="108" r="8" fill="#34c285"/>
+        <text x="430" y="98" text-anchor="middle" font-size="12" fill="#cfe9dc">Pont du Gard · bus 121</text></g>
     </svg>
-    <p class="note">🟡 nuits gratuites · 🔵 étapes où l'on dort · 🟢 sorties à la journée (train/bus). On avance d'ouest en est, on ne revient jamais en arrière.</p>
+    <p class="note">🟡 nuits gratuites · 🔵 étapes où l'on dort · 🟢 sorties à la journée. On avance d'ouest en est, on ne revient jamais en arrière (« open-jaw »).</p>
   </div>
 
-  <!-- TRANSPORT -->
-  <h2>🚌🚆 Comment se déplacer (2 logiques)</h2>
+  <!-- SE DEPLACER -->
+  <h2 id="deplacer">🚌🚆 Comment se déplacer</h2>
   <div class="card">
-    <h3 style="margin-top:0">1️⃣ Longue distance : Paris ↔ Sud → <span style="color:#fff">le BUS</span></h3>
+    <h3 style="margin-top:0">1️⃣ Longue distance Paris ↔ Sud → le BUS</h3>
     <p>FlixBus, le moins cher pour les longs trajets. De nuit = on gagne une nuit d'hôtel.</p>
     <table>
       <tr><th>Trajet</th><th>Durée</th><th class="r">Prix/pers</th></tr>
       <tr><td>Aller : Paris → Montpellier (arrêt Sabines)</td><td>~8–10 h</td><td class="r">dès ~20 €</td></tr>
       <tr><td>Retour : Avignon → Paris (8 bus/jour)</td><td>~8 h</td><td class="r">dès ~26 €</td></tr>
     </table>
-
-    <h3>2️⃣ Sur place : entre les villes → <span style="color:#fff">le TER</span> (pas cher)</h3>
-    <p>Les trains régionaux TER liO sont rapides et bon marché. C'est eux qu'on prend pour Nîmes, Sète, Arles, Avignon. Réservés quelques jours avant, ils descendent très bas.</p>
+    <h3>2️⃣ Entre les villes → le TER (pas cher)</h3>
+    <p>Les trains régionaux TER liO sont rapides et bon marché. C'est eux qu'on prend pour Nîmes, Sète, Arles, Avignon.</p>
     <table>
       <tr><th>Trajet</th><th>Durée</th><th class="r">Prix/pers</th></tr>
       <tr><td>Montpellier ↔ Sète</td><td>~20 min</td><td class="r">dès 1 € (~4 €)</td></tr>
       <tr><td>Montpellier → Nîmes</td><td>~30 min</td><td class="r">dès 1 € (~6 €)</td></tr>
       <tr><td>Nîmes → Arles</td><td>~18 min</td><td class="r">dès 4,50 €</td></tr>
       <tr><td>Arles ↔ Avignon</td><td>~20 min</td><td class="r">dès 3 €</td></tr>
-      <tr><td>Nîmes ↔ Avignon</td><td>~22 min</td><td class="r">dès 3 €</td></tr>
     </table>
-    <p class="note">➕ <b>Pont du Gard</b> : pas de train → bus liO <b>ligne 121</b> depuis Nîmes (~55 min, 2 €). &nbsp; <b>Montpellier</b> : tram (1,60 €) — L2 Sabines↔centre, L3 vers les plages, L1 vers les flamants du Méjean.</p>
-    <p class="note">⚠️ Les billets TER à <b>1 €</b> (1ᵉʳ week-end du mois) sont <b>suspendus en juillet-août</b> : on vise le tarif normal, qui reste bas.</p>
+    <p class="note">➕ <b>Pont du Gard</b> : bus liO <b>ligne 121</b> depuis Nîmes (~55 min, 2 €). &nbsp; <b>Montpellier</b> : tram 1,60 € (L2 Sabines↔centre, L3 plages, L1 flamants du Méjean). ⚠️ Billets TER à 1 € <b>suspendus en juillet-août</b>.</p>
   </div>
 
   <!-- DATES -->
-  <h2>📅 Les bonnes dates</h2>
+  <h2 id="dates">📅 Les bonnes dates</h2>
   <div class="card">
     <p><span class="tag t-green">✅ idéal</span> &nbsp; Partir <b>mardi 21 juillet</b>, rentrer <b>mercredi 29 ou jeudi 30</b>.</p>
     <p><span class="tag t-red">🔴 à fuir</span> &nbsp; Le <b>1ᵉʳ août</b> : grand chassé-croisé, transports bondés et au prix max.</p>
     <p><span class="tag t-gold">🎭 à savoir</span> &nbsp; Le <b>Festival d'Avignon</b> (4→26 juil.) rend la ville chère. On la visite à la journée, on y dort seulement après le 26.</p>
-    <p class="note">Les billets TER à 1 € (1ᵉʳ week-end du mois) sont <b>suspendus en juillet-août</b> — on compte le tarif normal.</p>
+  </div>
+
+  <!-- METEO & VALISE -->
+  <h2 id="meteo">🌡️ Météo &amp; valise</h2>
+  <div class="card">
+    <h3 style="margin-top:0">La météo fin juillet dans le Sud</h3>
+    <p>Chaud et très ensoleillé : <b>30 à 34 °C</b> en journée, ~20 °C la nuit, peu de pluie. La mer est à ~24–25 °C (baignade parfaite). Dans la vallée du Rhône (Avignon, Arles, Pont du Gard), le <b>mistral</b> peut souffler : vent sec et fort, mais ciel bleu.</p>
+    <div class="info">☀️ Conclusion : protection solaire indispensable, et on planifie les visites en plein soleil (remparts, Pont du Gard) le <b>matin</b>.</div>
+
+    <h3>La valise — coche au fur et à mesure</h3>
+    <ul class="check">
+      <li><label><input type="checkbox" data-ck="v_creme"><span><b>Crème solaire SPF50</b> (à acheter) + après-soleil</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_chapeau"><span>Chapeau / casquette + lunettes de soleil</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_maillot"><span>Maillots de bain + serviette légère (plages &amp; baignade au Gardon)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_marche"><span>Chaussures de marche confortables (pavés, mont Saint-Clair, remparts)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_leger"><span>Vêtements légers + une tenue un peu habillée pour les dîners</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_laine"><span>Une petite laine / veste (soirées + clim du bus de nuit)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_gourde"><span>Gourde réutilisable (l'eau du robinet est potable)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_batt"><span>Batterie externe + câbles (billets sur le téléphone !)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_pharma"><span>Trousse pharma (anti-moustique, pansements, doliprane)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_sac"><span>Petit sac à dos pour les journées d'excursion</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_nuit"><span>Coussin de nuque + masque + boules Quiès (bus de nuit)</span></label></li>
+      <li><label><input type="checkbox" data-ck="v_cb"><span>Carte bancaire + un peu d'espèces (petits commerces, marchés)</span></label></li>
+    </ul>
   </div>
 
   <!-- QUE FAIRE -->
-  <h2>🎟️ Que faire — ville par ville (en détail)</h2>
+  <h2 id="villes">🎟️ Que faire — ville par ville (en détail)</h2>
 
   <div class="card city-card free">
     <h3 style="margin-top:0">🟡 Montpellier <span class="mini">— base, 4 nuits gratuites</span></h3>
     <span class="howto">🚌 Arrivée FlixBus à Sabines → tram L2 jusqu'au centre (~15 min, 1,60 €)</span>
     <ul class="acts">
-      <li><b>Place de la Comédie</b> et son « Œuf » : le cœur battant de la ville, l'Opéra Comédie (1888) et les grandes terrasses. Point de départ de tout.</li>
-      <li><b>L'Écusson (vieille ville)</b> : le centre médiéval, un dédale de ruelles, hôtels particuliers Renaissance, places cachées et boutiques.</li>
-      <li><b>Promenade du Peyrou</b> : l'arc de triomphe de Louis XIV, le château d'eau et l'aqueduc Saint-Clément. <b>Le</b> spot du coucher de soleil. Gratuit.</li>
-      <li><b>Musée Fabre</b> : un des plus grands musées de beaux-arts hors Paris (Courbet, Delacroix, Bazille, Soulages). ⚠️ fermé le lundi — parfait par jour de canicule (climatisé).</li>
-      <li><b>Cathédrale Saint-Pierre</b> et la faculté de médecine, la plus ancienne d'Europe encore en activité.</li>
+      <li><b>Place de la Comédie</b> et son « Œuf » : le cœur battant de la ville, l'Opéra Comédie (1888), les grandes terrasses.</li>
+      <li><b>L'Écusson (vieille ville)</b> : dédale de ruelles, hôtels particuliers Renaissance, places cachées et boutiques.</li>
+      <li><b>Promenade du Peyrou</b> : arc de triomphe, château d'eau et aqueduc Saint-Clément. <b>Le</b> spot du coucher de soleil. Gratuit.</li>
+      <li><b>Musée Fabre</b> : un des plus grands musées de beaux-arts hors Paris (Courbet, Bazille, Soulages). Parfait par jour de canicule (climatisé).</li>
+      <li><b>Cathédrale Saint-Pierre</b> et la faculté de médecine, la plus ancienne d'Europe en activité.</li>
       <li><b>Jardin des plantes</b> : plus ancien jardin botanique de France (1593), ombragé et gratuit.</li>
       <li><b>Quartier Antigone</b> : architecture néoclassique géante de Ricardo Bofill, jusqu'aux berges du Lez.</li>
-      <li><b>Les Halles Castellane</b> ou le marché du Lez : pour manger sur le pouce.</li>
-      <li><b>Plages sans voiture</b> : tram L3 → Pérols/Carnon ; tram L1 → réserve naturelle du Méjean (flamants roses).</li>
+      <li><b>Plages sans voiture</b> : tram L3 → Pérols/Carnon ; tram L1 → réserve du Méjean (flamants roses).</li>
     </ul>
-    <div class="price">💶 Tarifs 2026 : <b>Musée Fabre 12 €</b> (réduit 9 €, gratuit le 1ᵉʳ dimanche du mois), ouvert mar–dim 11h–18h, fermé lundi — 39 bd Bonne Nouvelle. Peyrou, Comédie, Écusson, jardin des plantes : <b>gratuits</b>.</div>
-    <div class="food">🍴 À goûter : la grisette (miel-réglisse), les vins du Languedoc, les huîtres de Bouzigues. 🍽️ Sur le pouce : Les Halles Castellane, Empanadas Club.</div>
+    <div class="price">💶 Tarifs 2026 : <b>Musée Fabre 12 €</b> (réduit 9 €, gratuit le 1ᵉʳ dimanche du mois), mar–dim 11h–18h, fermé lundi (39 bd Bonne Nouvelle). Peyrou, Comédie, Écusson, jardin des plantes : <b>gratuits</b>.</div>
+    <div class="food">🍴 À goûter : la grisette (miel-réglisse), les vins du Languedoc, les huîtres de Bouzigues. Sur le pouce : Les Halles Castellane, Empanadas Club.</div>
     <div class="time">⏱️ Temps conseillé : 2 journées pleines + les soirées.</div>
   </div>
 
@@ -208,15 +277,15 @@
     <h3 style="margin-top:0">🟢 Sète <span class="mini">— excursion à la journée</span></h3>
     <span class="howto">🚆 TER depuis Montpellier · ~20 min · dès 1 € (~4 €)</span>
     <ul class="acts">
-      <li><b>Les canaux</b> : la « Venise du Languedoc », balade le long du Grand Canal et des quais bordés de restaurants.</li>
-      <li><b>Joutes nautiques</b> : tournois languedociens tout l'été sur le canal (le grand tournoi de la Saint-Louis est fin août, mais il y en a avant).</li>
-      <li><b>Mont Saint-Clair</b> : panorama à 180° sur l'étang de Thau d'un côté, la Méditerranée de l'autre.</li>
-      <li><b>La Pointe Courte</b> : le quartier des pêcheurs, immortalisé par Agnès Varda. Authentique et photogénique.</li>
+      <li><b>Les canaux</b> : la « Venise du Languedoc », balade le long du Grand Canal bordé de restaurants.</li>
+      <li><b>Joutes nautiques</b> : tournois languedociens tout l'été sur le canal (le grand est fin août).</li>
+      <li><b>Mont Saint-Clair</b> : panorama à 180° sur l'étang de Thau et la mer.</li>
+      <li><b>La Pointe Courte</b> : le quartier des pêcheurs, immortalisé par Agnès Varda.</li>
       <li><b>Cimetière marin</b> & musée Paul Valéry, vue sur la mer.</li>
-      <li><b>Les Halles de Sète</b> et la <b>plage du Lido</b> (grande plage de sable, accessible en navette/vélo).</li>
+      <li><b>Les Halles de Sète</b> et la <b>plage du Lido</b> (grande plage de sable).</li>
     </ul>
-    <div class="price">💶 Tarifs : canaux, mont Saint-Clair, Pointe Courte, cimetière marin, Halles = <b>gratuits</b>. Musée Paul Valéry payant (petit prix). Le gros du plaisir à Sète est gratuit.</div>
-    <div class="food">🍴 La <b>tielle</b> (tourte au poulpe) chez La Cettoise (2 rue du Palais) ou La Fabrique à Tielle (1 bd de Verdun) ; fruits de mer aux Halles de Sète ; huîtres de Bouzigues.</div>
+    <div class="price">💶 Tarifs : canaux, mont Saint-Clair, Pointe Courte, cimetière marin, Halles = <b>gratuits</b>. Le gros du plaisir à Sète est gratuit.</div>
+    <div class="food">🍴 La <b>tielle</b> (tourte au poulpe) chez La Cettoise (2 rue du Palais) ou La Fabrique à Tielle (1 bd de Verdun) ; fruits de mer aux Halles ; huîtres de Bouzigues.</div>
     <div class="time">⏱️ Temps conseillé : 1 journée (ou demi-journée + plage).</div>
   </div>
 
@@ -224,12 +293,12 @@
     <h3 style="margin-top:0">🟢 Aigues-Mortes &amp; la Camargue <span class="mini">— excursion à la journée</span></h3>
     <span class="howto">🚊🚌 Tram L1 (Place de France) + bus liO 606 · ~1 h</span>
     <ul class="acts">
-      <li><b>Les remparts médiévaux</b> : enceinte complète du XIIIᵉ + <b>tour de Constance</b>. Tour du chemin de ronde avec vue sur la Camargue.</li>
-      <li><b>Les Salins du Midi</b> : petit train touristique au milieu des <b>salins roses</b> et des montagnes de sel blanc. Le contraste rose/blanc/bleu est spectaculaire.</li>
-      <li><b>Flamants roses & manades</b> : observation des oiseaux, et possibilité de balade en manade (chevaux et taureaux de Camargue).</li>
+      <li><b>Les remparts médiévaux</b> + <b>tour de Constance</b> : tour du chemin de ronde avec vue sur la Camargue.</li>
+      <li><b>Les Salins du Midi</b> : petit train au milieu des <b>salins roses</b> et des montagnes de sel. Spectaculaire.</li>
+      <li><b>Flamants roses & manades</b> : observation, balade possible en manade (chevaux et taureaux).</li>
       <li><b>Intra-muros</b> : ruelles, place Saint-Louis, terrasses.</li>
     </ul>
-    <div class="price">💶 Tarifs 2026 : <b>Tours & remparts</b> (tour de Constance) 12 € en été (gratuit –25 ans UE), audioguide 3 €, ouvert 10h–19h. <b>Petit train des Salins du Midi</b> : adulte 14 €, enfant 10 €, forfait famille 44 €.</div>
+    <div class="price">💶 Tarifs 2026 : <b>Tours & remparts</b> 12 € en été (gratuit –25 ans UE), audioguide 3 €, 10h–19h. <b>Petit train des Salins</b> : adulte 14 €, enfant 10 €, famille 44 €.</div>
     <div class="food">🍴 À goûter : la fleur de sel de Camargue, la gardiane de taureau, le riz de Camargue.</div>
     <div class="time">⏱️ Temps conseillé : 1 journée.</div>
   </div>
@@ -238,15 +307,14 @@
     <h3 style="margin-top:0">🔵 Nîmes <span class="mini">— étape, 2 nuits</span></h3>
     <span class="howto">🚆 TER depuis Montpellier · ~30 min · dès 1 € (~6 €)</span>
     <ul class="acts">
-      <li><b>Les Arènes</b> : l'amphithéâtre romain le mieux conservé au monde. Audioguide, et parfois spectacles/concerts l'été.</li>
-      <li><b>La Maison Carrée</b> : temple romain quasi intact, classé UNESCO en 2023. Film immersif à l'intérieur.</li>
-      <li><b>Tour Magne & Jardins de la Fontaine</b> : superbes jardins du XVIIIᵉ ; montée à la tour pour la vue sur toute la ville.</li>
-      <li><b>Musée de la Romanité</b> : musée moderne face aux arènes, mosaïques et objets romains.</li>
-      <li><b>Carré d'Art</b> (Norman Foster) : art contemporain, et la place autour.</li>
-      <li>💡 Billet groupé « 3 monuments » (Arènes + Maison Carrée + Tour Magne) plus économique.</li>
+      <li><b>Les Arènes</b> : l'amphithéâtre romain le mieux conservé au monde. Audioguide, concerts l'été.</li>
+      <li><b>La Maison Carrée</b> : temple romain quasi intact, classé UNESCO en 2023.</li>
+      <li><b>Tour Magne & Jardins de la Fontaine</b> : jardins du XVIIIᵉ ; montée à la tour pour la vue.</li>
+      <li><b>Musée de la Romanité</b> : musée moderne face aux arènes, mosaïques.</li>
+      <li><b>Carré d'Art</b> (Norman Foster) : art contemporain.</li>
     </ul>
-    <div class="price">💶 Tarifs 2026 : <b>Pass « Nîmes la Romaine » 13 €</b> (réduit 11 €, enfant 6 €) = Arènes + Maison Carrée + Tour Magne, valable 3 jours — bien moins cher qu'à l'unité. En juillet : ouvert 9h–20h. Musée de la Romanité à part (~9 €).</div>
-    <div class="food">🍴 À goûter : la brandade de morue nîmoise ; les croquants de la Maison Villaret (boulangerie historique de 1775).</div>
+    <div class="price">💶 Tarifs 2026 : <b>Pass « Nîmes la Romaine » 13 €</b> (réduit 11 €) = Arènes + Maison Carrée + Tour Magne, valable 3 jours. En juillet : 9h–20h. Musée de la Romanité à part (~9 €).</div>
+    <div class="food">🍴 À goûter : la brandade de morue nîmoise ; les croquants de la Maison Villaret (boulangerie de 1775).</div>
     <div class="time">⏱️ Temps conseillé : 1 journée pleine (la 2ᵉ nuit sert au Pont du Gard).</div>
   </div>
 
@@ -254,29 +322,29 @@
     <h3 style="margin-top:0">🟢 Pont du Gard <span class="mini">— excursion depuis Nîmes</span></h3>
     <span class="howto">🚌 Bus liO ligne 121 depuis Nîmes · ~55 min · 2 € · accès au site gratuit</span>
     <ul class="acts">
-      <li><b>L'aqueduc romain à 3 étages</b> : le plus haut du monde romain (~50 m), classé UNESCO. Impressionnant de près.</li>
-      <li><b>Baignade dans le Gardon</b> au pied du pont (l'été) : galets et eau fraîche, l'un des rares endroits où se baigner sous un monument romain.</li>
-      <li><b>Canoë</b> : descente du Gardon depuis Collias jusqu'au pont (loueurs sur place) — la plus belle façon d'arriver.</li>
+      <li><b>L'aqueduc romain à 3 étages</b> : le plus haut du monde romain (~50 m), classé UNESCO.</li>
+      <li><b>Baignade dans le Gardon</b> au pied du pont : l'un des rares endroits où se baigner sous un monument romain.</li>
+      <li><b>Canoë</b> : descente du Gardon depuis Collias jusqu'au pont — la plus belle arrivée.</li>
       <li><b>Musée</b> et sentier « Mémoires de Garrigue » dans la nature.</li>
     </ul>
-    <div class="price">💶 Tarifs : accès au site à pied / vélo <b>gratuit</b> ; espaces découverte (musée, ciné, expo) 8 € ; canoë depuis Collias ~25 €/pers. Bus liO 121 : 2 € le trajet.</div>
+    <div class="price">💶 Tarifs : accès à pied / vélo <b>gratuit</b> ; espaces découverte (musée, ciné, expo) 8 € ; canoë depuis Collias ~25 €/pers. Bus 121 : 2 €.</div>
     <div class="food">🍴 Astuce : pique-nique au bord de l'eau. Y aller le matin (chaleur + affluence l'après-midi).</div>
-    <div class="time">⏱️ Temps conseillé : une demi-journée à une journée (avec baignade).</div>
+    <div class="time">⏱️ Temps conseillé : demi-journée à journée (avec baignade).</div>
   </div>
 
   <div class="card city-card">
     <h3 style="margin-top:0">🔵 Arles <span class="mini">— étape, 2 nuits</span></h3>
     <span class="howto">🚆 TER · ~18 min depuis Nîmes · dès 4,50 €</span>
     <ul class="acts">
-      <li><b>Les Arènes d'Arles</b> : amphithéâtre romain encore utilisé pour les courses camarguaises et férias.</li>
-      <li><b>Théâtre antique, Thermes de Constantin, Cryptoportiques, Alyscamps</b> (allée funéraire romaine) : Arles est un musée romain à ciel ouvert.</li>
-      <li><b>Sur les pas de Van Gogh</b> : l'Espace Van Gogh, le « Café la nuit » place du Forum, la Fondation Vincent Van Gogh.</li>
-      <li><b>Fondation LUMA</b> : la tour spectaculaire de Frank Gehry, art contemporain, dans le Parc des Ateliers (le parc est gratuit).</li>
-      <li><b>Musée départemental Arles antique</b> (« le Musée bleu ») : maquettes, mosaïques, barge romaine.</li>
-      <li><b>Le marché du samedi</b> : un des plus beaux et grands de Provence, le long du boulevard.</li>
+      <li><b>Les Arènes d'Arles</b> : amphithéâtre romain encore utilisé pour les courses camarguaises.</li>
+      <li><b>Théâtre antique, Thermes de Constantin, Cryptoportiques, Alyscamps</b> : Arles est un musée romain à ciel ouvert.</li>
+      <li><b>Sur les pas de Van Gogh</b> : l'Espace Van Gogh, le « Café la nuit » place du Forum, la Fondation Van Gogh.</li>
+      <li><b>Fondation LUMA</b> : la tour de Frank Gehry, art contemporain, Parc des Ateliers.</li>
+      <li><b>Musée départemental Arles antique</b> (« le Musée bleu ») : mosaïques, barge romaine.</li>
+      <li><b>Le marché du samedi</b> : un des plus beaux de Provence.</li>
     </ul>
-    <div class="price">💶 Tarifs 2026 : <b>Pass Avantage 19 €</b> (tous les monuments + 4 musées, économise +30 €) ou <b>Pass Liberté 15 €</b> (4 monuments au choix + musées). <b>LUMA</b> : tour, terrasses et toboggans <b>GRATUITS</b> (10h–19h30) ; expos en combiné 17 € (avec la Fondation Van Gogh).</div>
-    <div class="food">🍴 À goûter : le saucisson d'Arles, la gardiane de taureau. 🍽️ Bonnes adresses : Bistrot Populaire (au pied des Arènes), L'Oriel (près de la place du Forum).</div>
+    <div class="price">💶 Tarifs 2026 : <b>Pass Avantage 19 €</b> (tous les monuments + 4 musées) ou <b>Pass Liberté 15 €</b>. <b>LUMA</b> : tour, terrasses et toboggans <b>GRATUITS</b> (10h–19h30) ; expos en combiné 17 € (avec la Fondation Van Gogh).</div>
+    <div class="food">🍴 À goûter : le saucisson d'Arles, la gardiane. Bonnes adresses : Bistrot Populaire (au pied des Arènes), L'Oriel (près de la place du Forum).</div>
     <div class="time">⏱️ Temps conseillé : 1 à 2 journées.</div>
   </div>
 
@@ -284,52 +352,118 @@
     <h3 style="margin-top:0">🟢 Avignon <span class="mini">— excursion à la journée (Festival 4→26 juil.)</span></h3>
     <span class="howto">🚆 TER · ~20 min depuis Arles · dès 3 €</span>
     <ul class="acts">
-      <li><b>Le Palais des Papes</b> : le plus grand palais gothique d'Europe, immense. Compter 1h30–2h de visite.</li>
-      <li><b>Le pont Saint-Bénézet</b> (« le pont d'Avignon ») : le pont de la chanson, sur le Rhône.</li>
-      <li><b>Le Rocher des Doms</b> : jardin en hauteur, vue sur le Rhône, le pont et le Mont Ventoux. Gratuit.</li>
-      <li><b>Place de l'Horloge, remparts, Petit Palais</b> (primitifs italiens, gratuit certains jours).</li>
-      <li><b>Pendant le Festival</b> : théâtre de rue partout (le « Off ») — ambiance électrique, mais foule et prix élevés.</li>
-      <li>Si le temps : <b>Villeneuve-lès-Avignon</b> en face (Chartreuse, fort Saint-André).</li>
+      <li><b>Le Palais des Papes</b> : le plus grand palais gothique d'Europe. Compter 1h30–2h.</li>
+      <li><b>Le pont Saint-Bénézet</b> (« le pont d'Avignon ») : sur le Rhône.</li>
+      <li><b>Le Rocher des Doms</b> : jardin en hauteur, vue sur le Rhône et le Mont Ventoux. Gratuit.</li>
+      <li><b>Place de l'Horloge, remparts, Petit Palais</b> (primitifs italiens).</li>
+      <li><b>Pendant le Festival</b> : théâtre de rue partout (le « Off ») — ambiance unique mais foule.</li>
     </ul>
-    <div class="price">💶 Tarifs 2026 : <b>Palais des Papes 14,50 €</b> (réduit 11,50 €, enfant 8 €), ouvert 9h–19h ; <b>Pont Saint-Bénézet 5 €</b> (réduit 4 €) ; billet combiné Palais + Pont avantageux. Rocher des Doms : <b>gratuit</b>.</div>
-    <div class="food">🍴 À goûter : les papalines d'Avignon (chocolat-liqueur), les Côtes-du-Rhône. 🍽️ Bonnes adresses : L'Épicerie de Ginette (place des Corps-Saints), Le Bistrot d'Avenio.</div>
-    <div class="time">⏱️ Temps conseillé : 1 journée. On y dort seulement après le 26 juillet (sinon trop cher).</div>
+    <div class="price">💶 Tarifs 2026 : <b>Palais des Papes 14,50 €</b> (réduit 11,50 €), 9h–19h ; <b>Pont Saint-Bénézet 5 €</b> ; billet combiné avantageux. Rocher des Doms : <b>gratuit</b>.</div>
+    <div class="food">🍴 À goûter : les papalines d'Avignon (chocolat-liqueur), les Côtes-du-Rhône. Bonnes adresses : L'Épicerie de Ginette (place des Corps-Saints), Le Bistrot d'Avenio.</div>
+    <div class="time">⏱️ Temps conseillé : 1 journée. On y dort seulement après le 26 juillet.</div>
+  </div>
+
+  <!-- MARCHES -->
+  <h2 id="marches">🛒 Jours de marché</h2>
+  <div class="card">
+    <p>Les marchés provençaux sont une activité à part entière : produits locaux, ambiance, et de quoi pique-niquer pour pas cher.</p>
+    <table>
+      <tr><th>Ville</th><th>Quand</th></tr>
+      <tr><td>Montpellier</td><td>Les Halles Castellane tous les jours + marchés de quartier le matin</td></tr>
+      <tr><td>Sète</td><td>Les Halles tous les jours</td></tr>
+      <tr><td>Nîmes</td><td>Les Halles tous les jours ; grand marché le vendredi</td></tr>
+      <tr><td><b>Arles</b></td><td><b>Samedi matin</b> (bd des Lices) — un des plus beaux de Provence ; aussi mercredi</td></tr>
+      <tr><td>Aigues-Mortes</td><td>Mercredi &amp; dimanche matin</td></tr>
+      <tr><td><b>Uzès</b> (près du Pont du Gard)</td><td><b>Samedi matin</b> — marché médiéval très réputé</td></tr>
+      <tr><td>Avignon</td><td>Les Halles (place Pie) tous les jours sauf lundi</td></tr>
+    </table>
+    <p class="note">À confirmer sur place : les jours peuvent varier légèrement l'été.</p>
+  </div>
+
+  <!-- ROMANCE -->
+  <h2 id="romance">💞 Idées romantiques (rien que vous deux)</h2>
+  <div class="card">
+    <ul class="acts">
+      <li>🌅 <b>Coucher de soleil sur la Promenade du Peyrou</b> à Montpellier, puis apéro en terrasse de la Comédie.</li>
+      <li>🌊 <b>Dîner au bord des canaux de Sète</b>, suivi de la montée au mont Saint-Clair pour la vue de nuit.</li>
+      <li>🏖️ <b>Fin de journée à la plage</b> (Carnon en tram L3, ou les flamants du Méjean en L1).</li>
+      <li>💦 <b>Baignade en amoureux dans le Gardon</b>, au pied du Pont du Gard, tôt le matin quand c'est calme.</li>
+      <li>🌇 <b>Apéro au Rocher des Doms</b> à Avignon, face au Rhône et au pont illuminé.</li>
+      <li>🎨 <b>Balade nocturne à Arles</b> place du Forum, devant le café peint par Van Gogh.</li>
+      <li>🍷 <b>Dégustation de Côtes-du-Rhône</b> (Châteauneuf-du-Pape n'est pas loin d'Avignon).</li>
+    </ul>
   </div>
 
   <!-- PROGRAMME -->
-  <h2>🗓️ Le programme jour par jour</h2>
+  <h2 id="programme">🗓️ Le programme jour par jour</h2>
   <div class="card">
-    <div class="day"><div class="d">Lun 20 → Mar 21</div><div class="p"><b>Paris → Montpellier</b> en FlixBus de nuit. Arrivée à Sabines, tram L2 vers le centre. Soirée Place de la Comédie + Promenade du Peyrou.</div></div>
+    <div class="day"><div class="d">Lun 20 → Mar 21</div><div class="p"><b>Paris → Montpellier</b> en FlixBus de nuit. Arrivée à Sabines, tram L2. Soirée Comédie + Promenade du Peyrou.</div></div>
     <div class="day"><div class="d">Mer 22</div><div class="p"><b>Montpellier</b> : vieille ville (l'Écusson), Musée Fabre, marché.</div></div>
-    <div class="day"><div class="d">Jeu 23</div><div class="p"><b>Sète</b> à la journée (TER 25 min) : canaux, mont Saint-Clair, plage au retour.</div></div>
-    <div class="day"><div class="d">Ven 24</div><div class="p"><b>Aigues-Mortes</b> : remparts médiévaux + salins roses. Dernière nuit gratuite à Montpellier.</div></div>
-    <div class="day"><div class="d">Sam 25</div><div class="p"><b>→ Nîmes</b> (TER 30 min). Arènes romaines + Maison Carrée.</div></div>
-    <div class="day"><div class="d">Dim 26</div><div class="p"><b>Pont du Gard</b> en bus 121 : aqueduc romain + baignade (accès gratuit).</div></div>
-    <div class="day"><div class="d">Lun 27</div><div class="p"><b>→ Arles</b> (TER 20 min). Arènes, théâtre antique, Van Gogh, Fondation LUMA.</div></div>
+    <div class="day"><div class="d">Jeu 23</div><div class="p"><b>Sète</b> à la journée : canaux, mont Saint-Clair, plage au retour.</div></div>
+    <div class="day"><div class="d">Ven 24</div><div class="p"><b>Aigues-Mortes</b> : remparts + salins roses. Dernière nuit gratuite à Montpellier.</div></div>
+    <div class="day"><div class="d">Sam 25</div><div class="p"><b>→ Nîmes</b> (TER). Arènes + Maison Carrée.</div></div>
+    <div class="day"><div class="d">Dim 26</div><div class="p"><b>Pont du Gard</b> en bus 121 : aqueduc + baignade.</div></div>
+    <div class="day"><div class="d">Lun 27</div><div class="p"><b>→ Arles</b> (TER). Arènes, Van Gogh, Fondation LUMA.</div></div>
     <div class="day"><div class="d">Mar 28</div><div class="p"><b>Avignon</b> à la journée : Palais des Papes, pont Saint-Bénézet.</div></div>
     <div class="day"><div class="d">Mer 29</div><div class="p"><b>Avignon → Paris</b> en FlixBus. Rentrer avant le 1ᵉʳ août.</div></div>
     <p class="note">Version courte (4-5 j) : Montpellier (2 j) → Nîmes + Pont du Gard (1 j) → Arles + Avignon (1 j).</p>
   </div>
 
   <!-- BUDGET -->
-  <h2>💶 Le budget prévu</h2>
+  <h2 id="budget">💶 Le budget prévu</h2>
   <div class="card">
     <table>
       <tr><th>Poste</th><th class="r">≈ pour vous deux</th></tr>
       <tr><td>🚌 Bus FlixBus (aller + retour)</td><td class="r">100 – 140 €</td></tr>
-      <tr><td>🚆 Trains, bus &amp; tram sur place <span class="mini">(prix vérifiés)</span></td><td class="r">~ 75 €</td></tr>
+      <tr><td>🚆 Trains, bus &amp; tram sur place</td><td class="r">~ 75 €</td></tr>
       <tr><td>🛏️ Logement Nîmes ×2 + Arles ×2 <span class="mini">(Montpellier gratuit)</span></td><td class="r">220 – 340 €</td></tr>
       <tr class="tot"><td>Total transport + logement</td><td class="r">≈ 400 – 550 €</td></tr>
     </table>
-    <p class="note">💡 <b>Visites (en plus, optionnel)</b> : si vous faites tous les grands monuments (pass Nîmes 13 € + Aigues-Mortes remparts 12 € + petit train salins 14 € + pass Arles 15 € + Palais des Papes + pont 17 € + Pont du Gard 8 € + Musée Fabre 12 €), comptez <b>~80–95 €/pers</b>. Mais énormément de choses sont <b>gratuites</b> : Peyrou, l'Écusson, les plages, le Rocher des Doms, la tour LUMA, l'accès au Pont du Gard, Sète quasi en entier…</p>
-    <p class="note">Restaurants et extras en plus — c'est justement ce que le tracker ci-dessous va suivre en vrai.</p>
+    <p class="note">💡 <b>Visites (optionnel)</b> : tous les grands monuments ≈ <b>80–95 €/pers</b>. Mais beaucoup est <b>gratuit</b> : Peyrou, plages, Rocher des Doms, tour LUMA, accès Pont du Gard, Sète… Restos &amp; extras → suivis dans le tracker plus bas.</p>
+  </div>
+
+  <!-- CHECKLIST -->
+  <h2 id="checklist">✅ À faire avant de partir</h2>
+  <div class="card">
+    <ul class="check">
+      <li><label><input type="checkbox" data-ck="c_bus"><span><b>Réserver les 2 FlixBus</b> le plus tôt possible (= le moins cher)</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_logt"><span>Réserver les logements <b>Nîmes</b> (2 nuits) + <b>Arles</b> (2 nuits)</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_appart"><span>Confirmer les dates de l'appart avec l'ami d'Ines à Montpellier</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_dates"><span>Vérifier qu'aucun trajet ne tombe le <b>1ᵉʳ août</b></span></label></li>
+      <li><label><input type="checkbox" data-ck="c_billets"><span>Télécharger les billets de bus sur le téléphone (FlixBus 100 % mobile)</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_apps"><span>Installer les applis utiles (voir section suivante)</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_maps"><span>Télécharger les cartes Google Maps <b>hors ligne</b> de la région</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_pass"><span>Repérer les pass monuments (Nîmes 13 €, Arles 15 €) si on veut tout visiter</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_cb"><span>Prévenir la banque / vérifier le plafond de la carte</span></label></li>
+      <li><label><input type="checkbox" data-ck="c_valise"><span>Préparer la valise (voir la checklist plus haut)</span></label></li>
+    </ul>
+  </div>
+
+  <!-- PRATIQUE -->
+  <h2 id="pratique">📱 Applis &amp; infos pratiques</h2>
+  <div class="card">
+    <h3 style="margin-top:0">Applis à installer</h3>
+    <ul class="acts">
+      <li><b>FlixBus</b> — billets et suivi du bus en temps réel.</li>
+      <li><b>SNCF Connect</b> — acheter et valider les billets TER.</li>
+      <li><b>liO</b> (Région Occitanie) — bus régionaux (606, 121) et horaires.</li>
+      <li><b>TaM</b> — tram &amp; bus de Montpellier.</li>
+      <li><b>Google Maps</b> — penser à télécharger la zone <b>hors ligne</b>.</li>
+    </ul>
+    <h3>Numéros &amp; bon à savoir</h3>
+    <ul class="acts">
+      <li>📞 Urgences : <b>112</b> (numéro européen), 15 (SAMU), 17 (police), 18 (pompiers).</li>
+      <li>💧 L'eau du robinet est potable partout — remplis ta gourde.</li>
+      <li>🕐 Beaucoup de monuments <b>ferment les caisses 30 min à 1 h avant</b> la fermeture : arrive tôt.</li>
+      <li>☀️ Visites en plein soleil (remparts, Pont du Gard) → le <b>matin</b>. Musées climatisés → l'après-midi de canicule.</li>
+      <li>🎒 Bagages limités en FlixBus : 1 bagage en soute + 1 bagage à main inclus.</li>
+    </ul>
   </div>
 
   <!-- TRACKER -->
-  <h2>💸 Tracker de dépenses — Ines &amp; Steve</h2>
+  <h2 id="tracker">💸 Tracker de dépenses — Ines &amp; Steve</h2>
   <div class="card">
-    <p>Pendant le voyage, note ici chaque dépense et qui l'a payée. La page calcule en bas <b>qui doit combien à l'autre</b> (tout est partagé moitié-moitié). 💾 Tout reste enregistré dans ce navigateur, rien n'est envoyé en ligne.</p>
-
+    <p>Note ici chaque dépense et qui l'a payée. La page calcule en bas <b>qui doit combien à l'autre</b> (tout est partagé moitié-moitié). 💾 Enregistré dans ce navigateur, rien en ligne.</p>
     <div class="form">
       <input id="desc" type="text" placeholder="Dépense (ex : restaurant, billets, courses)">
       <div class="row2">
@@ -341,38 +475,36 @@
       </div>
       <button class="btn" onclick="addExpense()">➕ Ajouter la dépense</button>
     </div>
-
     <table id="list"><tbody id="rows"></tbody></table>
-
-    <table style="margin-top:12px">
+    <table style="margin-top:14px">
       <tr><th>Récap</th><th class="r">Montant</th></tr>
       <tr><td>Total dépensé</td><td class="r" id="total">0,00 €</td></tr>
       <tr><td><span class="who-ines">Ines</span> a payé</td><td class="r" id="tInes">0,00 €</td></tr>
       <tr><td><span class="who-steve">Steve</span> a payé</td><td class="r" id="tSteve">0,00 €</td></tr>
       <tr><td>Part de chacun (50/50)</td><td class="r" id="share">0,00 €</td></tr>
     </table>
-
     <div class="settle zero" id="settle">Ajoute une dépense pour commencer.</div>
     <button class="clear" onclick="clearAll()">🗑️ Tout effacer</button>
   </div>
 
   <!-- NOTICE -->
-  <h2>📒 Notice &amp; définitions</h2>
+  <h2 id="notice">📒 Notice &amp; définitions</h2>
   <div class="card">
     <h3 style="margin-top:0">Comment utiliser le fichier</h3>
-    <p>Double-clic = il s'ouvre dans le navigateur, même sans internet. Pour le mettre en ligne (GitHub Pages), voir le <code>README.md</code> du dossier. Le tracker fonctionne aussi une fois publié.</p>
+    <p>Double-clic = il s'ouvre dans le navigateur, même sans internet. Le tracker et les cases à cocher gardent tes données dans le navigateur de l'appareil utilisé.</p>
     <h3>Petit lexique</h3>
     <table>
-      <tr><td><b>FlixBus</b></td><td>autocar longue distance pas cher (~20–35 €, 8–10 h Paris↔Sud). Arrêt à Montpellier = <b>Sabines</b> (tram L2).</td></tr>
+      <tr><td><b>FlixBus</b></td><td>autocar longue distance pas cher. Arrêt Montpellier = Sabines (tram L2).</td></tr>
       <tr><td><b>TER liO</b></td><td>trains régionaux d'Occitanie, lents mais très bon marché (1–10 €).</td></tr>
       <tr><td><b>Bus 121</b></td><td>car liO reliant Nîmes ↔ Pont du Gard (~55 min, 2 €).</td></tr>
-      <tr><td><b>Open-jaw</b></td><td>arriver par une ville, repartir d'une autre, sans refaire le trajet à l'envers.</td></tr>
-      <tr><td><b>Tracker</b></td><td>le tableau de dépenses ci-dessus : il dit qui rembourse combien à l'autre.</td></tr>
+      <tr><td><b>Open-jaw</b></td><td>arriver par une ville, repartir d'une autre, sans refaire le trajet.</td></tr>
+      <tr><td><b>Mistral</b></td><td>vent du nord sec et fort dans la vallée du Rhône (Avignon, Arles).</td></tr>
     </table>
   </div>
 
   <footer>
-    Voyage Ines &amp; Steve · mis à jour le 16/06/2026 · prix indicatifs à confirmer à la réservation.
+    Voyage Ines &amp; Steve · mis à jour le 17/06/2026<br>
+    Tarifs &amp; horaires 2026 indicatifs, à confirmer à la réservation.
   </footer>
 
 </div>
@@ -397,12 +529,8 @@
     document.getElementById('desc').focus();
     render();
   }
-
   function removeExpense(i){ var d = load(); d.splice(i,1); save(d); render(); }
-
-  function clearAll(){
-    if(confirm('Effacer toutes les dépenses ?')){ save([]); render(); }
-  }
+  function clearAll(){ if(confirm('Effacer toutes les dépenses ?')){ save([]); render(); } }
 
   function render(){
     var data = load();
@@ -421,37 +549,39 @@
                      '<td class="r"><button class="btn-mini" title="Supprimer" onclick="removeExpense(' + i + ')">✕</button></td>';
       rows.appendChild(tr);
     });
-    var total = tInes + tSteve;
-    var share = total / 2;
+    var total = tInes + tSteve, share = total / 2;
     document.getElementById('total').textContent = fmt(total);
     document.getElementById('tInes').textContent = fmt(tInes);
     document.getElementById('tSteve').textContent = fmt(tSteve);
     document.getElementById('share').textContent = fmt(share);
-
     var settle = document.getElementById('settle');
-    var diff = tInes - share; // >0 : Ines a trop payé, Steve lui doit
-    if(total === 0){
-      settle.className = 'settle zero';
-      settle.textContent = 'Ajoute une dépense pour commencer.';
-    } else if(Math.abs(diff) < 0.005){
-      settle.className = 'settle zero';
-      settle.textContent = '✅ C\'est équilibré, personne ne doit rien.';
-    } else if(diff > 0){
-      settle.className = 'settle';
-      settle.innerHTML = '👉 <span class="who-steve">Steve</span> doit <b>' + fmt(diff) + '</b> à <span class="who-ines">Ines</span>';
-    } else {
-      settle.className = 'settle';
-      settle.innerHTML = '👉 <span class="who-ines">Ines</span> doit <b>' + fmt(-diff) + '</b> à <span class="who-steve">Steve</span>';
-    }
+    var diff = tInes - share;
+    if(total === 0){ settle.className = 'settle zero'; settle.textContent = 'Ajoute une dépense pour commencer.'; }
+    else if(Math.abs(diff) < 0.005){ settle.className = 'settle zero'; settle.textContent = '✅ C\'est équilibré, personne ne doit rien.'; }
+    else if(diff > 0){ settle.className = 'settle'; settle.innerHTML = '👉 <span class="who-steve">Steve</span> doit <b>' + fmt(diff) + '</b> à <span class="who-ines">Ines</span>'; }
+    else { settle.className = 'settle'; settle.innerHTML = '👉 <span class="who-ines">Ines</span> doit <b>' + fmt(-diff) + '</b> à <span class="who-steve">Steve</span>'; }
   }
+  function escapeHtml(s){ return s.replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
-  function escapeHtml(s){
-    return s.replace(/[&<>"']/g, function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  // checklists persistantes
+  var CK = 'voyage_checks_v1';
+  function loadChecks(){ try { return JSON.parse(localStorage.getItem(CK)) || {}; } catch(e){ return {}; } }
+  function saveChecks(o){ localStorage.setItem(CK, JSON.stringify(o)); }
+  function initChecks(){
+    var state = loadChecks();
+    var boxes = document.querySelectorAll('input[data-ck]');
+    boxes.forEach(function(cb){
+      if(state[cb.getAttribute('data-ck')]) cb.checked = true;
+      cb.addEventListener('change', function(){
+        var s = loadChecks();
+        s[cb.getAttribute('data-ck')] = cb.checked;
+        saveChecks(s);
+      });
     });
   }
 
   render();
+  initChecks();
 </script>
 </body>
 </html>
