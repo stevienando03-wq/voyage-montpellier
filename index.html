@@ -3,301 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voyage Sud de France — Circuit train sans voiture</title>
+<title>Voyage Sud de France — Ines & Steve</title>
 <style>
   :root{
-    --bg:#0f1720;--card:#161f2b;--card2:#1c2733;--ink:#eef3f8;--muted:#9fb0c0;
-    --line:#26323f;--green:#2bb673;--orange:#f0883e;--blue:#4aa8ff;--gold:#e8b84b;--red:#e5534b;--accent:#4aa8ff;
+    --bg:#0f1720;--card:#18222e;--card2:#1f2b38;--ink:#f1f5f9;--muted:#a7b6c5;
+    --line:#2a3744;--green:#2bb673;--orange:#f0883e;--blue:#4aa8ff;--gold:#e8b84b;--red:#e5534b;
+    --ines:#e879b9;--steve:#4aa8ff;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:linear-gradient(160deg,#0d141d,#11202c);color:var(--ink);
-    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.55}
-  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 70px}
-  header.hero{text-align:center;padding:18px 0 8px}
-  .hero h1{margin:0;font-size:32px;letter-spacing:.4px}
-  .hero .sub{color:var(--muted);margin-top:6px;font-size:15px}
-  .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-  .chip{background:var(--card2);border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:13px}
-  .chip b{color:var(--blue)}
-  h2{font-size:21px;margin:34px 0 12px;border-left:4px solid var(--accent);padding-left:11px}
-  h3{font-size:16px;margin:16px 0 6px;color:var(--gold)}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
-  .grid{display:grid;gap:14px}
-  .g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
-  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+  body{margin:0;background:#0e1620;color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.65}
+  .wrap{max-width:820px;margin:0 auto;padding:26px 18px 80px}
+  header.hero{text-align:center;padding:14px 0}
+  .hero h1{margin:0;font-size:30px}
+  .hero .sub{color:var(--muted);margin-top:8px;font-size:15px}
+  h2{font-size:22px;margin:38px 0 14px;display:flex;align-items:center;gap:10px}
+  h3{font-size:17px;margin:18px 0 6px;color:var(--gold)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:18px}
+  .big5{list-style:none;margin:0;padding:0}
+  .big5 li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .big5 li:last-child{border-bottom:none}
+  .big5 .ic{font-size:22px;min-width:30px;text-align:center}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th,td{padding:11px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:13px}
   td.r,th.r{text-align:right;white-space:nowrap}
-  .tag{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
-  .t-green{background:#13352a;color:#5fe0a3;border:1px solid #2bb67355}
-  .t-orange{background:#3a2614;color:#ffb877;border:1px solid #f0883e55}
-  .t-blue{background:#13283f;color:#7fc1ff;border:1px solid #4aa8ff55}
-  .t-free{background:#13352a;color:#7fffc0;border:1px solid #2bb67399;font-weight:700}
-  svg{width:100%;height:auto;display:block;border-radius:12px;background:#0c1620}
-  .day{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+  .tot td{border-top:2px solid var(--line);border-bottom:none;font-weight:700;font-size:16px}
+  .tag{display:inline-block;border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600}
+  .t-green{background:#143a2c;color:#6ee7af}.t-red{background:#3a1715;color:#ff8a82}
+  .t-gold{background:#3a3214;color:#ffd766}
+  svg{width:100%;height:auto;display:block;border-radius:12px;background:#0b141d;margin-top:6px}
+  .guide{counter-reset:step}
+  .guide .g{display:flex;gap:14px;padding:10px 0;align-items:flex-start}
+  .guide .num{counter-increment:step;background:var(--blue);color:#06121f;font-weight:800;
+    min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .guide .num::before{content:counter(step)}
+  .day{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
   .day:last-child{border-bottom:none}
-  .day .d{min-width:96px;font-weight:700;color:var(--gold)}
-  .day .city{min-width:120px;font-weight:600}
+  .day .d{min-width:104px;font-weight:700;color:var(--gold);font-size:14px}
   .day .p{flex:1}
-  .day .m{min-width:96px;text-align:right;color:var(--muted);font-size:13px}
-  .note{font-size:13px;color:var(--muted);margin-top:8px}
-  .src{font-size:12px;color:#6f8090}
-  .kpi{display:flex;align-items:baseline;gap:8px}
-  .kpi .big{font-size:25px;font-weight:800;color:var(--blue)}
-  ul.clean{margin:6px 0 0;padding-left:18px}ul.clean li{margin:4px 0}
-  .verdict{border-left:3px solid var(--green);background:#11261d;padding:10px 14px;border-radius:8px;margin-top:10px;font-size:14px}
-  .warnbox{border-left:3px solid var(--red);background:#2c1614;padding:10px 14px;border-radius:8px;margin-top:10px;font-size:14px}
-  .info{border-left:3px solid var(--blue);background:#11233a;padding:10px 14px;border-radius:8px;margin-top:10px;font-size:14px}
-  footer{text-align:center;color:#5d6e7e;font-size:12px;margin-top:40px}
-  a{color:var(--blue)}
-  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:4px 0 12px}
-  .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .note{font-size:14px;color:var(--muted);margin-top:10px}
+  .verdict{border-left:4px solid var(--green);background:#11271d;padding:12px 16px;border-radius:10px;margin-top:12px}
+  .warn{border-left:4px solid var(--red);background:#2c1614;padding:12px 16px;border-radius:10px;margin-top:12px}
+
+  /* tracker */
+  .form{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:8px}
+  .form input,.form select,.form button{font-size:16px;padding:11px 12px;border-radius:10px;
+    border:1px solid var(--line);background:var(--card2);color:var(--ink);font-family:inherit}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{background:var(--blue);color:#06121f;font-weight:700;border:none;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .btn-mini{background:none;border:none;color:var(--red);cursor:pointer;font-size:18px;padding:0 4px}
+  .who-ines{color:var(--ines);font-weight:700}.who-steve{color:var(--steve);font-weight:700}
+  .empty{text-align:center;color:var(--muted);padding:18px;font-style:italic}
+  .settle{font-size:20px;font-weight:800;text-align:center;padding:16px;border-radius:12px;
+    background:#11271d;border:1px solid #2bb67355;margin-top:14px}
+  .settle.zero{background:var(--card2);border-color:var(--line)}
+  .mini{font-size:13px;color:var(--muted)}
+  .pill{font-size:12px;padding:2px 8px;border-radius:6px;background:var(--card2);border:1px solid var(--line)}
+  .clear{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;
+    padding:7px 12px;cursor:pointer;font-size:13px;margin-top:8px}
+  footer{text-align:center;color:#5d6e7e;font-size:13px;margin-top:36px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="hero">
-    <h1>🚆 Sud de France — le circuit sans voiture</h1>
-    <div class="sub">Paris → Montpellier → Nîmes → Arles → Avignon → Paris · fin juillet 2026 · 2 voyageurs · bus longue distance + trains régionaux</div>
-    <div class="chips">
-      <span class="chip">🚄 Aller-retour <b>open-jaw</b> (zéro retour en arrière)</span>
-      <span class="chip">🛏️ <b>4 nuits gratuites</b> à Montpellier</span>
-      <span class="chip">🚗 <b>0 voiture</b> · tout en train/bus/tram</span>
-      <span class="chip">💶 ≈ <b>400–550 €</b> /2 pers (option tout-bus)</span>
-      <span class="chip">🔴 À fuir : <b>1ᵉʳ août</b></span>
-    </div>
+    <h1>🌅 Voyage Sud de France</h1>
+    <div class="sub">Ines &amp; Steve · fin juillet 2026 · Paris → Montpellier → Nîmes → Arles → Avignon · 100 % bus & train, zéro voiture</div>
   </header>
 
-  <!-- POURQUOI CE PLAN -->
-  <div class="card">
-    <h2 style="margin-top:0">🎯 L'idée directrice : un circuit linéaire, pas un camp de base</h2>
-    <p>Plutôt que de dormir à Montpellier et revenir chaque soir, on <b>avance d'ouest en est</b> en posant ses valises 1 à 3 nuits par étape. On ne revient jamais en arrière : c'est plus reposant, on voit plus, et surtout c'est <b>moins cher</b> car on supprime les allers-retours payants.</p>
-    <div class="verdict"><b>Le coup malin — l'« open-jaw » :</b> on <u>arrive</u> à Montpellier et on <u>repart de Avignon</u>. Deux OUIGO directs depuis/vers Paris à partir de 19 €, et aucun trajet en double. On ne paie jamais le retour à Montpellier.</div>
+  <!-- GUIDE DE LECTURE -->
+  <div class="card guide">
+    <h2 style="margin-top:0">📖 Comment lire cette page</h2>
+    <div class="g"><div class="num"></div><div><b>L'essentiel</b> — les 5 points à retenir, juste en dessous.</div></div>
+    <div class="g"><div class="num"></div><div><b>La carte &amp; les dates</b> — le trajet et les bons jours pour partir.</div></div>
+    <div class="g"><div class="num"></div><div><b>Le programme jour par jour</b> — quoi faire, quel jour.</div></div>
+    <div class="g"><div class="num"></div><div><b>Le budget prévu</b> — combien ça coûte à deux, à peu près.</div></div>
+    <div class="g"><div class="num"></div><div><b>💸 Le tracker de dépenses</b> — pendant le voyage, vous notez qui paie quoi. La page calcule toute seule <b>qui doit rembourser combien à l'autre</b>.</div></div>
   </div>
 
-  <!-- D'OU ON PART -->
-  <h2>📍 D'où on part, et pourquoi</h2>
-  <div class="grid g2">
-    <div class="card">
-      <h3 style="margin-top:0">Départ : Paris, en FlixBus</h3>
-      <p>Choix retenu : <b>tout-bus</b>, le moins cher. FlixBus relie Paris au Sud sans correspondance, jour et nuit.</p>
-      <ul class="clean">
-        <li><b>Aller</b> → Montpellier (~8–10 h, dès ~20 €/pers)</li>
-        <li><b>Retour</b> → depuis Avignon (~8 h, dès ~26 €/pers, 8 bus/jour)</li>
-      </ul>
-      <p class="note">Arrêt parisien selon l'horaire (souvent Paris-Bercy / Porte de Charenton) — à vérifier sur le billet.</p>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">🚌 Arrêt à Montpellier : Sabines</h3>
-      <p>FlixBus s'arrête à la <b>gare routière Sabines</b> (210 av. du Colonel Pavelet), pas en centre-ville.</p>
-      <ul class="clean">
-        <li>Reliée au centre par le <b>tram L2</b> (arrêt Sabines) → Comédie en ~15 min.</li>
-        <li>Garde 1,60 € par personne pour le ticket de tram à l'arrivée.</li>
-      </ul>
-      <p class="note">Astuce : un <b>bus de nuit</b> (arrivée au petit matin) t'économise une nuit d'hôtel et une journée de trajet.</p>
-    </div>
+  <!-- ESSENTIEL -->
+  <h2>⭐ L'essentiel en 5 points</h2>
+  <div class="card">
+    <ul class="big5">
+      <li><span class="ic">🚌</span><div><b>Tout en bus (FlixBus).</b> Le moins cher : ~100–140 € à deux l'aller-retour. Idéalement de nuit pour gagner une nuit d'hôtel.</div></li>
+      <li><span class="ic">🛏️</span><div><b>4 nuits gratuites</b> chez l'ami d'Ines à Montpellier. Ensuite on avance vers Nîmes puis Arles.</div></li>
+      <li><span class="ic">🚗</span><div><b>Zéro voiture.</b> Trains régionaux (TER liO), bus et tram suffisent partout.</div></li>
+      <li><span class="ic">📅</span><div><b>Aller ~21 juillet, retour ~29-30.</b> Surtout <b>pas le 1ᵉʳ août</b> (week-end noir, prix au max).</div></li>
+      <li><span class="ic">💶</span><div><b>Budget ≈ 400–550 €</b> pour vous deux (transport + logement), hors restos et visites.</div></li>
+    </ul>
   </div>
 
-  <!-- CARTE CIRCUIT -->
-  <h2>🗺️ Le circuit en un coup d'œil</h2>
+  <!-- CARTE -->
+  <h2>🗺️ Le trajet</h2>
   <div class="card">
-    <div class="legend">
-      <span><span class="dot" style="background:var(--blue)"></span>Étape où l'on dort</span>
-      <span><span class="dot" style="background:var(--green)"></span>Excursion à la journée (train/bus)</span>
-      <span><span class="dot" style="background:var(--gold)"></span>Nuit gratuite (appart)</span>
-    </div>
-    <svg viewBox="0 0 980 430" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <marker id="arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L6,3 L0,6 Z" fill="#4aa8ff"/>
-        </marker>
-      </defs>
-
-      <!-- retour open-jaw : arc Avignon -> Paris -->
-      <path d="M880,230 C880,70 300,40 70,180" fill="none" stroke="#4aa8ff" stroke-width="2.5"
+    <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#4aa8ff"/></marker></defs>
+      <!-- retour -->
+      <path d="M720,190 C720,60 240,40 60,150" fill="none" stroke="#4aa8ff" stroke-width="2.5"
             stroke-dasharray="2 7" marker-end="url(#arr)"/>
-      <text x="470" y="58" text-anchor="middle" fill="#7fc1ff" font-size="13" font-style="italic">retour FlixBus · Avignon → Paris ~8 h (dès 26 €) · 8 bus/jour</text>
-
-      <!-- ligne principale -->
-      <line x1="70" y1="230" x2="880" y2="230" stroke="#33414f" stroke-width="6" stroke-linecap="round"/>
-
-      <!-- branches journee Montpellier (bas) -->
-      <g stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5">
-        <line x1="300" y1="230" x2="225" y2="330"/>
-        <line x1="300" y1="230" x2="360" y2="330"/>
-      </g>
-      <!-- branche Pont du Gard depuis Nimes (haut) -->
-      <line x1="540" y1="230" x2="540" y2="150" stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5"/>
-      <!-- branche Avignon depuis Arles -->
-      <line x1="710" y1="230" x2="710" y2="150" stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5"/>
-
-      <!-- gares principales -->
-      <!-- Paris -->
-      <g><circle cx="70" cy="230" r="12" fill="#1c2733" stroke="#4aa8ff" stroke-width="3"/>
-        <text x="70" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Paris</text>
-        <text x="70" y="288" text-anchor="middle" font-size="11" fill="#9fb0c0">départ &amp; arrivée</text></g>
-      <!-- Montpellier -->
-      <g><circle cx="300" cy="230" r="14" fill="#e8b84b" stroke="#fff" stroke-width="2"/>
-        <text x="300" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="#ffe7a3">Montpellier</text>
-        <text x="300" y="194" text-anchor="middle" font-size="11" fill="#e8b84b">4 nuits · GRATUIT</text></g>
-      <!-- Nimes -->
-      <g><circle cx="540" cy="230" r="13" fill="#4aa8ff" stroke="#fff" stroke-width="2"/>
-        <text x="540" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Nîmes</text>
-        <text x="540" y="288" text-anchor="middle" font-size="11" fill="#9fb0c0">1–2 nuits</text></g>
-      <!-- Arles -->
-      <g><circle cx="710" cy="230" r="13" fill="#4aa8ff" stroke="#fff" stroke-width="2"/>
-        <text x="710" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Arles</text>
-        <text x="710" y="288" text-anchor="middle" font-size="11" fill="#9fb0c0">2 nuits</text></g>
-      <!-- Avignon (depart retour) -->
-      <g><circle cx="880" cy="230" r="13" fill="#1c2733" stroke="#4aa8ff" stroke-width="3"/>
-        <text x="880" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Avignon</text>
-        <text x="880" y="288" text-anchor="middle" font-size="11" fill="#9fb0c0">arrêt bus retour</text></g>
-
+      <text x="390" y="52" text-anchor="middle" fill="#7fc1ff" font-size="13" font-style="italic">retour FlixBus · Avignon → Paris ~8 h</text>
+      <!-- ligne -->
+      <line x1="60" y1="190" x2="720" y2="190" stroke="#33414f" stroke-width="6" stroke-linecap="round"/>
+      <!-- gares -->
+      <g><circle cx="60" cy="190" r="11" fill="#1f2b38" stroke="#4aa8ff" stroke-width="3"/>
+        <text x="60" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Paris</text></g>
+      <g><circle cx="240" cy="190" r="14" fill="#e8b84b" stroke="#fff" stroke-width="2"/>
+        <text x="240" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#ffe7a3">Montpellier</text>
+        <text x="240" y="156" text-anchor="middle" font-size="11" fill="#e8b84b">4 nuits · GRATUIT</text></g>
+      <g><circle cx="430" cy="190" r="12" fill="#4aa8ff" stroke="#fff" stroke-width="2"/>
+        <text x="430" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Nîmes</text>
+        <text x="430" y="242" text-anchor="middle" font-size="11" fill="#a7b6c5">2 nuits</text></g>
+      <g><circle cx="580" cy="190" r="12" fill="#4aa8ff" stroke="#fff" stroke-width="2"/>
+        <text x="580" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Arles</text>
+        <text x="580" y="242" text-anchor="middle" font-size="11" fill="#a7b6c5">2 nuits</text></g>
+      <g><circle cx="720" cy="190" r="12" fill="#1f2b38" stroke="#4aa8ff" stroke-width="3"/>
+        <text x="720" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#9fd0ff">Avignon</text>
+        <text x="720" y="242" text-anchor="middle" font-size="11" fill="#a7b6c5">retour</text></g>
       <!-- excursions -->
-      <g><circle cx="225" cy="330" r="9" fill="#2bb673"/><text x="225" y="353" text-anchor="middle" font-size="12" fill="#cfe9dc">Sète · 25 min</text></g>
-      <g><circle cx="360" cy="330" r="9" fill="#2bb673"/><text x="360" y="353" text-anchor="middle" font-size="12" fill="#cfe9dc">Aigues-Mortes</text></g>
-      <g><circle cx="540" cy="150" r="9" fill="#2bb673"/><text x="540" y="140" text-anchor="middle" font-size="12" fill="#cfe9dc">Pont du Gard · bus 121</text></g>
-      <g><circle cx="710" cy="150" r="9" fill="#2bb673"/><text x="710" y="140" text-anchor="middle" font-size="12" fill="#cfe9dc">Avignon · 20 min (Palais des Papes)</text></g>
-
-      <!-- segments labels -->
-      <text x="405" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">TER 30 min</text>
-      <text x="625" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">TER 30 min</text>
-      <text x="180" y="222" text-anchor="middle" font-size="11" fill="#7f93a5">FlixBus ~8-10 h</text>
+      <line x1="240" y1="190" x2="240" y2="280" stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5"/>
+      <g><circle cx="240" cy="280" r="8" fill="#2bb673"/>
+        <text x="240" y="303" text-anchor="middle" font-size="12" fill="#cfe9dc">Sète · Aigues-Mortes (journée)</text></g>
+      <line x1="430" y1="190" x2="430" y2="110" stroke="#2bb67366" stroke-width="2.5" stroke-dasharray="5 5"/>
+      <g><circle cx="430" cy="110" r="8" fill="#2bb673"/>
+        <text x="430" y="100" text-anchor="middle" font-size="12" fill="#cfe9dc">Pont du Gard · bus 121</text></g>
     </svg>
-    <p class="note">Tout le trajet est faisable <b>sans voiture</b> : TGV/OUIGO entre Paris et la région, TER liO entre les villes (15 trains/jour sur l'axe), bus liO B21 pour le Pont du Gard, tram pour les plages.</p>
+    <p class="note">🟡 nuits gratuites · 🔵 étapes où l'on dort · 🟢 sorties à la journée (train/bus). On avance d'ouest en est, on ne revient jamais en arrière.</p>
   </div>
 
   <!-- DATES -->
-  <h2>📅 Les bonnes dates (et les pièges)</h2>
-  <div class="grid g2">
-    <div class="card">
-      <h3 style="margin-top:0">🔴 Le chassé-croisé du 1ᵉʳ août</h3>
-      <p>Le <b>samedi 1ᵉʳ août 2026</b> = week-end « noir » des départs juillet→août, le plus saturé de l'année sur l'axe du Sud. Prix au plafond, trains bondés.</p>
-      <div class="warnbox"><b>Fenêtre conseillée : aller le mardi 21 juillet, retour le jeudi 30.</b> On boucle avant le 1ᵉʳ août. (Si congés plus tard → partir après le 2 août.)</div>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">🎭 Le Festival d'Avignon : 4 → 26 juillet 2026</h3>
-      <p>La 80ᵉ édition rend Avignon <b>magnifique mais bondée et chère</b> jusqu'au 26 juillet. D'où le choix de <b>dormir à Arles</b> (moins cher, à 20 min) et de visiter Avignon <b>à la journée</b>.</p>
-      <div class="info">Astuce budget : si vous décalez le séjour <b>après le 27 juillet</b>, les prix de logement à Avignon retombent — vous pourriez alors y dormir directement.</div>
-    </div>
+  <h2>📅 Les bonnes dates</h2>
+  <div class="card">
+    <p><span class="tag t-green">✅ idéal</span> &nbsp; Partir <b>mardi 21 juillet</b>, rentrer <b>mercredi 29 ou jeudi 30</b>.</p>
+    <p><span class="tag t-red">🔴 à fuir</span> &nbsp; Le <b>1ᵉʳ août</b> : grand chassé-croisé, transports bondés et au prix max.</p>
+    <p><span class="tag t-gold">🎭 à savoir</span> &nbsp; Le <b>Festival d'Avignon</b> (4→26 juil.) rend la ville chère. On la visite à la journée, on y dort seulement après le 26.</p>
+    <p class="note">Les billets TER à 1 € (1ᵉʳ week-end du mois) sont <b>suspendus en juillet-août</b> — on compte le tarif normal.</p>
   </div>
 
-  <!-- TRANSPORT LONGUE DISTANCE -->
-  <h2>🚆🚌 Descendre dans le Sud — quand les OUIGO sont chers</h2>
+  <!-- PROGRAMME -->
+  <h2>🗓️ Le programme jour par jour</h2>
   <div class="card">
-    <p>OUIGO n'est imbattable que réservé tôt sur créneaux creux. Fin juillet, ses prix montent vite — voici les <b>3 vraies options</b>, du plus cher au moins cher, par personne et aller simple :</p>
-    <table>
-      <tr><th>Option</th><th>Prix/pers (aller)</th><th>Durée</th><th>Le pour / le contre</th></tr>
-      <tr><td><b>OUIGO TGV</b><div class="src">Gare de Lyon</div></td><td>19 € → 100 €+</td><td>~3h15</td><td>Pas cher SI réservé tôt. Cher et bondé en surge. Bagages limités.</td></tr>
-      <tr><td><b>TGV Inoui + Carte Avantage</b><div class="src">49 €/an/pers, −30 %</div></td><td>plafonné <b>89 €</b> max</td><td>~3h15</td><td>Le plafond protège du surge : jamais plus de 89 €/trajet même fin juillet. Confort + souplesse. Rentable dès ~3 trajets.</td></tr>
-      <tr><td><b>Bus FlixBus</b><div class="src">BlaBlaCar Bus en voie d'arrêt</div></td><td><b>20 → 35 €</b></td><td>~8–10 h</td><td>De loin le moins cher. Mais une journée entière de trajet, de nuit souvent.</td></tr>
-    </table>
-    <div class="verdict"><b>✅ Option retenue : tout-bus (mini budget).</b> FlixBus aller ET retour, ~20–35 €/pers le trajet → environ <b>100–140 € de transport longue distance pour vous deux</b>. On accepte ~8–10 h de route (idéalement de nuit pour gagner une nuit d'hôtel). <br><span class="note">Plan B si tu changes d'avis : 2 cartes Avantage (98 €) plafonnent le TGV à 89 €/trajet — confort en ~3h15.</span></div>
-    <p class="note">💡 Astuce open-jaw : compare aussi <b>Paris→Nîmes</b> et <b>Paris→Avignon</b> — selon le jour, l'une est moins chère que Paris→Montpellier. Tu entres par la moins chère, ça ne change pas le circuit.</p>
+    <div class="day"><div class="d">Lun 20 → Mar 21</div><div class="p"><b>Paris → Montpellier</b> en FlixBus de nuit. Arrivée à Sabines, tram L2 vers le centre. Soirée Place de la Comédie + Promenade du Peyrou.</div></div>
+    <div class="day"><div class="d">Mer 22</div><div class="p"><b>Montpellier</b> : vieille ville (l'Écusson), Musée Fabre, marché.</div></div>
+    <div class="day"><div class="d">Jeu 23</div><div class="p"><b>Sète</b> à la journée (TER 25 min) : canaux, mont Saint-Clair, plage au retour.</div></div>
+    <div class="day"><div class="d">Ven 24</div><div class="p"><b>Aigues-Mortes</b> : remparts médiévaux + salins roses. Dernière nuit gratuite à Montpellier.</div></div>
+    <div class="day"><div class="d">Sam 25</div><div class="p"><b>→ Nîmes</b> (TER 30 min). Arènes romaines + Maison Carrée.</div></div>
+    <div class="day"><div class="d">Dim 26</div><div class="p"><b>Pont du Gard</b> en bus 121 : aqueduc romain + baignade (accès gratuit).</div></div>
+    <div class="day"><div class="d">Lun 27</div><div class="p"><b>→ Arles</b> (TER 20 min). Arènes, théâtre antique, Van Gogh, Fondation LUMA.</div></div>
+    <div class="day"><div class="d">Mar 28</div><div class="p"><b>Avignon</b> à la journée : Palais des Papes, pont Saint-Bénézet.</div></div>
+    <div class="day"><div class="d">Mer 29</div><div class="p"><b>Avignon → Paris</b> en FlixBus. Rentrer avant le 1ᵉʳ août.</div></div>
+    <p class="note">Version courte (4-5 j) : Montpellier (2 j) → Nîmes + Pont du Gard (1 j) → Arles + Avignon (1 j).</p>
   </div>
 
   <!-- BUDGET -->
-  <h2>💶 Le budget — chiffres vérifiés (2 personnes, ~9 jours)</h2>
-
+  <h2>💶 Le budget prévu</h2>
   <div class="card">
-    <h3 style="margin-top:0">✅ Prix FIXES — tarifs publics vérifiés (ne bougent pas)</h3>
     <table>
-      <tr><th>Trajet</th><th>Tarif public / pers.</th><th class="r">×2 pers. (A/R inclus)</th></tr>
-      <tr><td>TER Montpellier ↔ Sète <span class="src">(~16 min)</span></td><td>dès 1 € · moy. ~4 €</td><td class="r">~16 €</td></tr>
-      <tr><td>Tram + bus liO 606 Aigues-Mortes <span class="src">(A/R)</span></td><td>tram ~1,60 € + bus ~2 €/trajet</td><td class="r">~15 €</td></tr>
-      <tr><td>TER Montpellier → Nîmes <span class="src">(~29 min)</span></td><td>dès 1 € · moy. ~6 €</td><td class="r">~12 €</td></tr>
-      <tr><td>Bus liO <b>ligne 121</b> Nîmes ↔ Pont du Gard <span class="src">(~55 min)</span></td><td>2 € / trajet</td><td class="r">~8 €</td></tr>
-      <tr><td>TER Nîmes → Arles <span class="src">(~18 min)</span></td><td>dès 4,50 €</td><td class="r">~10 €</td></tr>
-      <tr><td>TER Arles ↔ Avignon <span class="src">(~20 min)</span></td><td>dès 3 €</td><td class="r">~14 €</td></tr>
-      <tr><td>Accès au monument du Pont du Gard</td><td><b>gratuit</b> (musée optionnel 8 €)</td><td class="r"><span class="tag t-free">0 €</span></td></tr>
-      <tr><td>Logement Montpellier ×4 nuits</td><td>appart de l'ami</td><td class="r"><span class="tag t-free">0 €</span></td></tr>
-      <tr><td colspan="2"><b>Sous-total déplacements internes + bus</b></td><td class="r"><b>≈ 75 €</b></td></tr>
+      <tr><th>Poste</th><th class="r">≈ pour vous deux</th></tr>
+      <tr><td>🚌 Bus FlixBus (aller + retour)</td><td class="r">100 – 140 €</td></tr>
+      <tr><td>🚆 Trains, bus &amp; tram sur place <span class="mini">(prix vérifiés)</span></td><td class="r">~ 75 €</td></tr>
+      <tr><td>🛏️ Logement Nîmes ×2 + Arles ×2 <span class="mini">(Montpellier gratuit)</span></td><td class="r">220 – 340 €</td></tr>
+      <tr class="tot"><td>Total transport + logement</td><td class="r">≈ 400 – 550 €</td></tr>
     </table>
-    <p class="note">Ces tarifs régionaux liO sont stables. ⚠️ Les billets TER à <b>1 €</b> (1ᵉʳ week-end du mois) sont <b>suspendus en juillet-août</b> → on table sur le prix moyen, pas sur le plancher.</p>
+    <p class="note">Restaurants, visites et extras en plus — c'est justement ce que le tracker ci-dessous va suivre en vrai.</p>
   </div>
 
+  <!-- TRACKER -->
+  <h2>💸 Tracker de dépenses — Ines &amp; Steve</h2>
   <div class="card">
-    <h3 style="margin-top:0">⚠️ Prix VARIABLES — à confirmer en direct selon vos dates</h3>
-    <table>
-      <tr><th>Poste</th><th>Option bus (mini)</th><th>Option train (réaliste juillet)</th><th class="r">×2 pers.</th></tr>
-      <tr><td>Aller Paris → Sud</td><td>FlixBus ~25 €/pers</td><td>TGV/Avantage 70–89 €/pers</td><td class="r">50–178 €</td></tr>
-      <tr><td>Retour Sud → Paris</td><td>FlixBus ~25 €/pers</td><td>TGV/Avantage 70–89 €/pers</td><td class="r">50–178 €</td></tr>
-      <tr><td>2 cartes Avantage <span class="src">(option train)</span></td><td>—</td><td>49 €/pers</td><td class="r">0 ou 98 €</td></tr>
-      <tr><td>Logement Nîmes ×2 nuits</td><td colspan="2">55 € (tôt) → 90 €/nuit (juillet)</td><td class="r">110–180 €</td></tr>
-      <tr><td>Logement Arles ×2 nuits</td><td colspan="2">55 € (tôt) → 100 €/nuit (juillet)</td><td class="r">110–200 €</td></tr>
-      <tr><td colspan="3"><b>Sous-total variable</b></td><td class="r"><b>320–834 €</b></td></tr>
-    </table>
-    <p class="note">Le prix moyen d'un Paris–Montpellier en train est ~89 € (jusqu'à 148 € le jour même). Le 19 € OUIGO existe mais <b>seulement réservé tôt sur horaires creux</b> → je ne le compte plus comme acquis depuis que tu confirmes qu'ils sont chers.</p>
-  </div>
+    <p>Pendant le voyage, note ici chaque dépense et qui l'a payée. La page calcule en bas <b>qui doit combien à l'autre</b> (tout est partagé moitié-moitié). 💾 Tout reste enregistré dans ce navigateur, rien n'est envoyé en ligne.</p>
 
-  <div class="card">
-    <div class="kpi"><span class="big" style="color:var(--gold)">≈ 400 – 550 €</span><span class="note">option tout-bus retenue · 2 pers. · ~9 jours (hors resto/visites)</span></div>
-    <table style="margin-top:6px">
-      <tr><th>Poste (scénario tout-bus)</th><th class="r">Total ~2 pers.</th></tr>
-      <tr><td>FlixBus aller + retour (4 trajets)</td><td class="r">100–140 €</td></tr>
-      <tr><td>Déplacements internes + bus 121 (fixe)</td><td class="r">~75 €</td></tr>
-      <tr><td>Logement Nîmes ×2 + Arles ×2 (Montpellier gratuit)</td><td class="r">220–340 €</td></tr>
-      <tr><td><b>Total</b></td><td class="r"><b>≈ 400–550 €</b></td></tr>
-    </table>
-    <p class="note">L'appart gratuit de Montpellier économise <b>~280 €</b> (4 nuits). Le bus de nuit peut encore retirer 1 nuit d'hôtel.</p>
-    <p class="note">Autres scénarios pour mémoire : <b>bus aller / train retour</b> ~550–650 € · <b>TGV A/R confort</b> ~750–900 €.</p>
-    <div class="warnbox"><b>Honnêteté sur les chiffres :</b> les lignes « fixes » sont des tarifs publics vérifiés (juin 2026). Le transport longue distance et le logement dépendent de la date et du remplissage — <u>impossible à garantir sans simuler vos dates réelles</u>. Donne-moi les 2 dates exactes et je sors le prix au billet près.</div>
-  </div>
+    <div class="form">
+      <input id="desc" type="text" placeholder="Dépense (ex : restaurant, billets, courses)">
+      <div class="row2">
+        <input id="amount" type="number" min="0" step="0.01" placeholder="Montant en €">
+        <select id="payer">
+          <option value="Ines">Payé par Ines</option>
+          <option value="Steve">Payé par Steve</option>
+        </select>
+      </div>
+      <button class="btn" onclick="addExpense()">➕ Ajouter la dépense</button>
+    </div>
 
-  <!-- ROADMAP -->
-  <h2>🗓️ La road map — jour par jour (8 jours)</h2>
-  <div class="card">
-    <div class="day"><div class="d">Lun 20→Mar 21</div><div class="city">Montpellier</div><div class="p">FlixBus de nuit depuis Paris (gagne 1 nuit d'hôtel) · arrivée Sabines au matin + tram L2 · installation · soirée Comédie + Peyrou</div><div class="m">🚌 FlixBus nuit</div></div>
-    <div class="day"><div class="d">Mer 22</div><div class="city">Montpellier</div><div class="p">L'Écusson (vieille ville), Musée Fabre, marché · 🛏️ nuit gratuite</div><div class="m">🚶 à pied</div></div>
-    <div class="day"><div class="d">Jeu 23</div><div class="city">→ Sète</div><div class="p">Sète à la journée : canaux, mont Saint-Clair, tielle + plage au retour · 🛏️ nuit gratuite</div><div class="m">🚆 TER 25 min</div></div>
-    <div class="day"><div class="d">Ven 24</div><div class="city">→ Aigues-Mortes</div><div class="p">Remparts médiévaux + salins roses (Camargue) · dernière nuit gratuite à Montpellier</div><div class="m">🚊 tram+bus</div></div>
-    <div class="day"><div class="d">Sam 25</div><div class="city">Nîmes</div><div class="p">On quitte Montpellier pour de bon · Arènes romaines + Maison Carrée (billet 3 monuments) · 🛏️ nuit Nîmes</div><div class="m">🚆 TER 30 min</div></div>
-    <div class="day"><div class="d">Dim 26</div><div class="city">→ Pont du Gard</div><div class="p">Pont du Gard en bus ligne 121 : aqueduc UNESCO + baignade dans le Gardon (accès gratuit) · retour Nîmes ou direct Arles</div><div class="m">🚌 bus 121</div></div>
-    <div class="day"><div class="d">Lun 27</div><div class="city">Arles</div><div class="p">Arènes, théâtre antique, Van Gogh, Fondation LUMA · 🛏️ nuit Arles</div><div class="m">🚆 TER 20 min</div></div>
-    <div class="day"><div class="d">Mar 28</div><div class="city">→ Avignon</div><div class="p">Avignon à la journée : Palais des Papes, Pont Saint-Bénézet · 🛏️ dernière nuit (Arles)</div><div class="m">🚆 TER 20 min</div></div>
-    <div class="day"><div class="d">Mer 29</div><div class="city">→ Paris</div><div class="p">Matinée libre à Avignon · retour FlixBus depuis Avignon (~8 h) · ou bus de nuit pour dormir en route (avant le 1ᵉʳ août !)</div><div class="m">🚌 FlixBus</div></div>
-    <p class="note"><b>Version courte (4–5 jours) :</b> Montpellier (2 j, gratuit) → Nîmes + Pont du Gard (1 j) → Arles + Avignon (1 j) → retour Avignon. <br><b>Variante Ouest :</b> remplacer Nîmes/Arles/Avignon par <b>Narbonne → Carcassonne</b> (cité médiévale UNESCO, 1h de train) et rentrer via Carcassonne/Toulouse.</p>
+    <table id="list"><tbody id="rows"></tbody></table>
+
+    <table style="margin-top:12px">
+      <tr><th>Récap</th><th class="r">Montant</th></tr>
+      <tr><td>Total dépensé</td><td class="r" id="total">0,00 €</td></tr>
+      <tr><td><span class="who-ines">Ines</span> a payé</td><td class="r" id="tInes">0,00 €</td></tr>
+      <tr><td><span class="who-steve">Steve</span> a payé</td><td class="r" id="tSteve">0,00 €</td></tr>
+      <tr><td>Part de chacun (50/50)</td><td class="r" id="share">0,00 €</td></tr>
+    </table>
+
+    <div class="settle zero" id="settle">Ajoute une dépense pour commencer.</div>
+    <button class="clear" onclick="clearAll()">🗑️ Tout effacer</button>
   </div>
 
   <!-- NOTICE -->
-  <h2>📖 Notice &amp; définitions — comment utiliser ce document</h2>
-  <div class="grid g2">
-    <div class="card">
-      <h3 style="margin-top:0">Mode d'emploi</h3>
-      <ul class="clean">
-        <li>Ce fichier est <b>autonome</b> : double-clic, il s'ouvre dans le navigateur, même sans connexion.</li>
-        <li>Lis dans l'ordre : <i>idée → d'où on part → carte → dates → budget → road map</i>.</li>
-        <li>Pour publier en ligne (GitHub Pages), voir le <code>README.md</code> du dossier.</li>
-        <li>Quand vos dates/durée sont fixées, je le transforme en planning daté définitif.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">Définitions</h3>
-      <ul class="clean">
-        <li><b>Open-jaw</b> : arriver dans une ville et repartir d'une autre, sans refaire le trajet en sens inverse. Moins cher, moins de temps perdu.</li>
-        <li><b>FlixBus</b> : autocar longue distance low-cost, dès ~20 €, ~8–10 h Paris↔Sud. Arrêt Montpellier = Sabines (tram L2). <b>Option retenue.</b></li>
-        <li><b>Carte Avantage</b> (plan B) : 49 €/an, −30 % et plafond 89 € sur TGV Inoui. Utile si on repasse au train.</li>
-        <li><b>TER liO</b> : trains régionaux d'Occitanie, lents mais très bon marché (5–15 €). ⚠️ <b>billets à 1 € suspendus en juillet-août.</b></li>
-        <li><b>Bus ligne 121</b> : car liO Gard reliant Nîmes ↔ Pont du Gard ↔ Uzès (~55 min, 2 € le trajet).</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- HYPOTHESES -->
+  <h2>📒 Notice &amp; définitions</h2>
   <div class="card">
-    <h3 style="margin-top:0">🔧 Sur quoi repose ce plan (à confirmer)</h3>
-    <p class="src"><b>Hypothèses :</b> séjour ~9 jours fin juillet · 0 voiture · 2 personnes · départ Paris Gare de Lyon · budget serré (OUIGO + TER) · 4 nuits à l'appart de Montpellier. <br>
-    <b>Ce qui changerait :</b> durée réelle ≠ 8 j → on recale le tableau (10 j = +Carcassonne ou +Marseille) · dates après le 27 juillet → on peut dormir à Avignon · envie « mer » → on remplace une étape par Sète/Collioure. <br>
-    <b>Prix indicatifs</b> au 16/06/2026, à confirmer à la réservation.</p>
+    <h3 style="margin-top:0">Comment utiliser le fichier</h3>
+    <p>Double-clic = il s'ouvre dans le navigateur, même sans internet. Pour le mettre en ligne (GitHub Pages), voir le <code>README.md</code> du dossier. Le tracker fonctionne aussi une fois publié.</p>
+    <h3>Petit lexique</h3>
+    <table>
+      <tr><td><b>FlixBus</b></td><td>autocar longue distance pas cher (~20–35 €, 8–10 h Paris↔Sud). Arrêt à Montpellier = <b>Sabines</b> (tram L2).</td></tr>
+      <tr><td><b>TER liO</b></td><td>trains régionaux d'Occitanie, lents mais très bon marché (1–10 €).</td></tr>
+      <tr><td><b>Bus 121</b></td><td>car liO reliant Nîmes ↔ Pont du Gard (~55 min, 2 €).</td></tr>
+      <tr><td><b>Open-jaw</b></td><td>arriver par une ville, repartir d'une autre, sans refaire le trajet à l'envers.</td></tr>
+      <tr><td><b>Tracker</b></td><td>le tableau de dépenses ci-dessus : il dit qui rembourse combien à l'autre.</td></tr>
+    </table>
   </div>
 
   <footer>
-    Conseiller voyage · circuit train sans voiture · mis à jour le 16/06/2026<br>
-    Sources : OUIGO, SNCF Connect / TER liO Occitanie, Bison Futé, Festival d'Avignon, offices de tourisme. Prix &amp; horaires à confirmer.
+    Voyage Ines &amp; Steve · mis à jour le 16/06/2026 · prix indicatifs à confirmer à la réservation.
   </footer>
 
 </div>
+
+<script>
+  var KEY = 'voyage_depenses_v1';
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+  function save(d){ localStorage.setItem(KEY, JSON.stringify(d)); }
+  function fmt(n){ return n.toFixed(2).replace('.', ',') + ' €'; }
+
+  function addExpense(){
+    var desc = document.getElementById('desc').value.trim();
+    var amount = parseFloat(document.getElementById('amount').value);
+    var payer = document.getElementById('payer').value;
+    if(!desc){ alert('Donne un nom à la dépense.'); return; }
+    if(isNaN(amount) || amount <= 0){ alert('Entre un montant valide.'); return; }
+    var data = load();
+    data.push({ desc: desc, amount: amount, payer: payer });
+    save(data);
+    document.getElementById('desc').value = '';
+    document.getElementById('amount').value = '';
+    document.getElementById('desc').focus();
+    render();
+  }
+
+  function removeExpense(i){ var d = load(); d.splice(i,1); save(d); render(); }
+
+  function clearAll(){
+    if(confirm('Effacer toutes les dépenses ?')){ save([]); render(); }
+  }
+
+  function render(){
+    var data = load();
+    var rows = document.getElementById('rows');
+    rows.innerHTML = '';
+    var tInes = 0, tSteve = 0;
+    if(data.length === 0){
+      rows.innerHTML = '<tr><td class="empty" colspan="3">Aucune dépense pour l\'instant.</td></tr>';
+    }
+    data.forEach(function(e, i){
+      if(e.payer === 'Ines') tInes += e.amount; else tSteve += e.amount;
+      var cls = e.payer === 'Ines' ? 'who-ines' : 'who-steve';
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + escapeHtml(e.desc) + ' <span class="pill ' + cls + '">' + e.payer + '</span></td>' +
+                     '<td class="r">' + fmt(e.amount) + '</td>' +
+                     '<td class="r"><button class="btn-mini" title="Supprimer" onclick="removeExpense(' + i + ')">✕</button></td>';
+      rows.appendChild(tr);
+    });
+    var total = tInes + tSteve;
+    var share = total / 2;
+    document.getElementById('total').textContent = fmt(total);
+    document.getElementById('tInes').textContent = fmt(tInes);
+    document.getElementById('tSteve').textContent = fmt(tSteve);
+    document.getElementById('share').textContent = fmt(share);
+
+    var settle = document.getElementById('settle');
+    var diff = tInes - share; // >0 : Ines a trop payé, Steve lui doit
+    if(total === 0){
+      settle.className = 'settle zero';
+      settle.textContent = 'Ajoute une dépense pour commencer.';
+    } else if(Math.abs(diff) < 0.005){
+      settle.className = 'settle zero';
+      settle.textContent = '✅ C\'est équilibré, personne ne doit rien.';
+    } else if(diff > 0){
+      settle.className = 'settle';
+      settle.innerHTML = '👉 <span class="who-steve">Steve</span> doit <b>' + fmt(diff) + '</b> à <span class="who-ines">Ines</span>';
+    } else {
+      settle.className = 'settle';
+      settle.innerHTML = '👉 <span class="who-ines">Ines</span> doit <b>' + fmt(-diff) + '</b> à <span class="who-steve">Steve</span>';
+    }
+  }
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  render();
+</script>
 </body>
 </html>
