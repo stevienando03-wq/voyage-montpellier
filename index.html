@@ -64,6 +64,16 @@
   .clear{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;
     padding:7px 12px;cursor:pointer;font-size:13px;margin-top:8px}
   footer{text-align:center;color:#5d6e7e;font-size:13px;margin-top:36px}
+  .acts{margin:10px 0 0;padding-left:20px}
+  .acts li{margin:7px 0}
+  .acts li b{color:#e7eef5}
+  .howto{font-size:14px;color:#9fd0ff;background:#10243a;border:1px solid #4aa8ff44;
+    border-radius:8px;padding:7px 11px;display:block;margin:2px 0 4px}
+  .food{font-size:14px;color:#ffd766;margin-top:10px;background:#2a2412;border-radius:8px;padding:7px 11px}
+  .time{font-size:13px;color:var(--muted);margin-top:6px}
+  .city-card{border-left:4px solid var(--blue)}
+  .city-card.free{border-left-color:var(--gold)}
+  .city-card.day{border-left-color:var(--green)}
 </style>
 </head>
 <body>
@@ -77,11 +87,13 @@
   <!-- GUIDE DE LECTURE -->
   <div class="card guide">
     <h2 style="margin-top:0">📖 Comment lire cette page</h2>
-    <div class="g"><div class="num"></div><div><b>L'essentiel</b> — les 5 points à retenir, juste en dessous.</div></div>
-    <div class="g"><div class="num"></div><div><b>La carte &amp; les dates</b> — le trajet et les bons jours pour partir.</div></div>
+    <div class="g"><div class="num"></div><div><b>L'essentiel</b> — les 5 points à retenir.</div></div>
+    <div class="g"><div class="num"></div><div><b>La carte &amp; comment se déplacer</b> — le trajet, le bus pour Paris↔Sud, le TER entre les villes.</div></div>
+    <div class="g"><div class="num"></div><div><b>Les dates</b> — les bons jours pour partir.</div></div>
+    <div class="g"><div class="num"></div><div><b>🎟️ Que faire ville par ville</b> — toutes les activités en détail, les spécialités à goûter, le temps conseillé.</div></div>
     <div class="g"><div class="num"></div><div><b>Le programme jour par jour</b> — quoi faire, quel jour.</div></div>
-    <div class="g"><div class="num"></div><div><b>Le budget prévu</b> — combien ça coûte à deux, à peu près.</div></div>
-    <div class="g"><div class="num"></div><div><b>💸 Le tracker de dépenses</b> — pendant le voyage, vous notez qui paie quoi. La page calcule toute seule <b>qui doit rembourser combien à l'autre</b>.</div></div>
+    <div class="g"><div class="num"></div><div><b>Le budget prévu</b> — combien ça coûte à deux.</div></div>
+    <div class="g"><div class="num"></div><div><b>💸 Le tracker de dépenses</b> — pendant le voyage, vous notez qui paie quoi ; la page calcule <b>qui rembourse combien à l'autre</b>.</div></div>
   </div>
 
   <!-- ESSENTIEL -->
@@ -134,6 +146,31 @@
     <p class="note">🟡 nuits gratuites · 🔵 étapes où l'on dort · 🟢 sorties à la journée (train/bus). On avance d'ouest en est, on ne revient jamais en arrière.</p>
   </div>
 
+  <!-- TRANSPORT -->
+  <h2>🚌🚆 Comment se déplacer (2 logiques)</h2>
+  <div class="card">
+    <h3 style="margin-top:0">1️⃣ Longue distance : Paris ↔ Sud → <span style="color:#fff">le BUS</span></h3>
+    <p>FlixBus, le moins cher pour les longs trajets. De nuit = on gagne une nuit d'hôtel.</p>
+    <table>
+      <tr><th>Trajet</th><th>Durée</th><th class="r">Prix/pers</th></tr>
+      <tr><td>Aller : Paris → Montpellier (arrêt Sabines)</td><td>~8–10 h</td><td class="r">dès ~20 €</td></tr>
+      <tr><td>Retour : Avignon → Paris (8 bus/jour)</td><td>~8 h</td><td class="r">dès ~26 €</td></tr>
+    </table>
+
+    <h3>2️⃣ Sur place : entre les villes → <span style="color:#fff">le TER</span> (pas cher)</h3>
+    <p>Les trains régionaux TER liO sont rapides et bon marché. C'est eux qu'on prend pour Nîmes, Sète, Arles, Avignon. Réservés quelques jours avant, ils descendent très bas.</p>
+    <table>
+      <tr><th>Trajet</th><th>Durée</th><th class="r">Prix/pers</th></tr>
+      <tr><td>Montpellier ↔ Sète</td><td>~20 min</td><td class="r">dès 1 € (~4 €)</td></tr>
+      <tr><td>Montpellier → Nîmes</td><td>~30 min</td><td class="r">dès 1 € (~6 €)</td></tr>
+      <tr><td>Nîmes → Arles</td><td>~18 min</td><td class="r">dès 4,50 €</td></tr>
+      <tr><td>Arles ↔ Avignon</td><td>~20 min</td><td class="r">dès 3 €</td></tr>
+      <tr><td>Nîmes ↔ Avignon</td><td>~22 min</td><td class="r">dès 3 €</td></tr>
+    </table>
+    <p class="note">➕ <b>Pont du Gard</b> : pas de train → bus liO <b>ligne 121</b> depuis Nîmes (~55 min, 2 €). &nbsp; <b>Montpellier</b> : tram (1,60 €) — L2 Sabines↔centre, L3 vers les plages, L1 vers les flamants du Méjean.</p>
+    <p class="note">⚠️ Les billets TER à <b>1 €</b> (1ᵉʳ week-end du mois) sont <b>suspendus en juillet-août</b> : on vise le tarif normal, qui reste bas.</p>
+  </div>
+
   <!-- DATES -->
   <h2>📅 Les bonnes dates</h2>
   <div class="card">
@@ -141,6 +178,113 @@
     <p><span class="tag t-red">🔴 à fuir</span> &nbsp; Le <b>1ᵉʳ août</b> : grand chassé-croisé, transports bondés et au prix max.</p>
     <p><span class="tag t-gold">🎭 à savoir</span> &nbsp; Le <b>Festival d'Avignon</b> (4→26 juil.) rend la ville chère. On la visite à la journée, on y dort seulement après le 26.</p>
     <p class="note">Les billets TER à 1 € (1ᵉʳ week-end du mois) sont <b>suspendus en juillet-août</b> — on compte le tarif normal.</p>
+  </div>
+
+  <!-- QUE FAIRE -->
+  <h2>🎟️ Que faire — ville par ville (en détail)</h2>
+
+  <div class="card city-card free">
+    <h3 style="margin-top:0">🟡 Montpellier <span class="mini">— base, 4 nuits gratuites</span></h3>
+    <span class="howto">🚌 Arrivée FlixBus à Sabines → tram L2 jusqu'au centre (~15 min, 1,60 €)</span>
+    <ul class="acts">
+      <li><b>Place de la Comédie</b> et son « Œuf » : le cœur battant de la ville, l'Opéra Comédie (1888) et les grandes terrasses. Point de départ de tout.</li>
+      <li><b>L'Écusson (vieille ville)</b> : le centre médiéval, un dédale de ruelles, hôtels particuliers Renaissance, places cachées et boutiques.</li>
+      <li><b>Promenade du Peyrou</b> : l'arc de triomphe de Louis XIV, le château d'eau et l'aqueduc Saint-Clément. <b>Le</b> spot du coucher de soleil. Gratuit.</li>
+      <li><b>Musée Fabre</b> : un des plus grands musées de beaux-arts hors Paris (Courbet, Delacroix, Bazille, Soulages). ⚠️ fermé le lundi — parfait par jour de canicule (climatisé).</li>
+      <li><b>Cathédrale Saint-Pierre</b> et la faculté de médecine, la plus ancienne d'Europe encore en activité.</li>
+      <li><b>Jardin des plantes</b> : plus ancien jardin botanique de France (1593), ombragé et gratuit.</li>
+      <li><b>Quartier Antigone</b> : architecture néoclassique géante de Ricardo Bofill, jusqu'aux berges du Lez.</li>
+      <li><b>Les Halles Castellane</b> ou le marché du Lez : pour manger sur le pouce.</li>
+      <li><b>Plages sans voiture</b> : tram L3 → Pérols/Carnon ; tram L1 → réserve naturelle du Méjean (flamants roses).</li>
+    </ul>
+    <div class="food">🍴 À goûter : la grisette (bonbon miel-réglisse), les vins du Languedoc, les huîtres de Bouzigues.</div>
+    <div class="time">⏱️ Temps conseillé : 2 journées pleines + les soirées.</div>
+  </div>
+
+  <div class="card city-card day">
+    <h3 style="margin-top:0">🟢 Sète <span class="mini">— excursion à la journée</span></h3>
+    <span class="howto">🚆 TER depuis Montpellier · ~20 min · dès 1 € (~4 €)</span>
+    <ul class="acts">
+      <li><b>Les canaux</b> : la « Venise du Languedoc », balade le long du Grand Canal et des quais bordés de restaurants.</li>
+      <li><b>Joutes nautiques</b> : tournois languedociens tout l'été sur le canal (le grand tournoi de la Saint-Louis est fin août, mais il y en a avant).</li>
+      <li><b>Mont Saint-Clair</b> : panorama à 180° sur l'étang de Thau d'un côté, la Méditerranée de l'autre.</li>
+      <li><b>La Pointe Courte</b> : le quartier des pêcheurs, immortalisé par Agnès Varda. Authentique et photogénique.</li>
+      <li><b>Cimetière marin</b> & musée Paul Valéry, vue sur la mer.</li>
+      <li><b>Les Halles de Sète</b> et la <b>plage du Lido</b> (grande plage de sable, accessible en navette/vélo).</li>
+    </ul>
+    <div class="food">🍴 À goûter : la tielle (tourte au poulpe épicée), la macaronade, les huîtres et moules de l'étang de Thau.</div>
+    <div class="time">⏱️ Temps conseillé : 1 journée (ou demi-journée + plage).</div>
+  </div>
+
+  <div class="card city-card day">
+    <h3 style="margin-top:0">🟢 Aigues-Mortes &amp; la Camargue <span class="mini">— excursion à la journée</span></h3>
+    <span class="howto">🚊🚌 Tram L1 (Place de France) + bus liO 606 · ~1 h</span>
+    <ul class="acts">
+      <li><b>Les remparts médiévaux</b> : enceinte complète du XIIIᵉ + <b>tour de Constance</b>. Tour du chemin de ronde avec vue sur la Camargue.</li>
+      <li><b>Les Salins du Midi</b> : petit train touristique au milieu des <b>salins roses</b> et des montagnes de sel blanc. Le contraste rose/blanc/bleu est spectaculaire.</li>
+      <li><b>Flamants roses & manades</b> : observation des oiseaux, et possibilité de balade en manade (chevaux et taureaux de Camargue).</li>
+      <li><b>Intra-muros</b> : ruelles, place Saint-Louis, terrasses.</li>
+    </ul>
+    <div class="food">🍴 À goûter : la fleur de sel de Camargue, la gardiane de taureau, le riz de Camargue.</div>
+    <div class="time">⏱️ Temps conseillé : 1 journée.</div>
+  </div>
+
+  <div class="card city-card">
+    <h3 style="margin-top:0">🔵 Nîmes <span class="mini">— étape, 2 nuits</span></h3>
+    <span class="howto">🚆 TER depuis Montpellier · ~30 min · dès 1 € (~6 €)</span>
+    <ul class="acts">
+      <li><b>Les Arènes</b> : l'amphithéâtre romain le mieux conservé au monde. Audioguide, et parfois spectacles/concerts l'été.</li>
+      <li><b>La Maison Carrée</b> : temple romain quasi intact, classé UNESCO en 2023. Film immersif à l'intérieur.</li>
+      <li><b>Tour Magne & Jardins de la Fontaine</b> : superbes jardins du XVIIIᵉ ; montée à la tour pour la vue sur toute la ville.</li>
+      <li><b>Musée de la Romanité</b> : musée moderne face aux arènes, mosaïques et objets romains.</li>
+      <li><b>Carré d'Art</b> (Norman Foster) : art contemporain, et la place autour.</li>
+      <li>💡 Billet groupé « 3 monuments » (Arènes + Maison Carrée + Tour Magne) plus économique.</li>
+    </ul>
+    <div class="food">🍴 À goûter : la brandade de morue nîmoise, le croquant Villaret.</div>
+    <div class="time">⏱️ Temps conseillé : 1 journée pleine (la 2ᵉ nuit sert au Pont du Gard).</div>
+  </div>
+
+  <div class="card city-card day">
+    <h3 style="margin-top:0">🟢 Pont du Gard <span class="mini">— excursion depuis Nîmes</span></h3>
+    <span class="howto">🚌 Bus liO ligne 121 depuis Nîmes · ~55 min · 2 € · accès au site gratuit</span>
+    <ul class="acts">
+      <li><b>L'aqueduc romain à 3 étages</b> : le plus haut du monde romain (~50 m), classé UNESCO. Impressionnant de près.</li>
+      <li><b>Baignade dans le Gardon</b> au pied du pont (l'été) : galets et eau fraîche, l'un des rares endroits où se baigner sous un monument romain.</li>
+      <li><b>Canoë</b> : descente du Gardon depuis Collias jusqu'au pont (loueurs sur place) — la plus belle façon d'arriver.</li>
+      <li><b>Musée</b> et sentier « Mémoires de Garrigue » dans la nature.</li>
+    </ul>
+    <div class="food">🍴 Astuce : pique-nique au bord de l'eau. Y aller le matin (chaleur + affluence l'après-midi).</div>
+    <div class="time">⏱️ Temps conseillé : une demi-journée à une journée (avec baignade).</div>
+  </div>
+
+  <div class="card city-card">
+    <h3 style="margin-top:0">🔵 Arles <span class="mini">— étape, 2 nuits</span></h3>
+    <span class="howto">🚆 TER · ~18 min depuis Nîmes · dès 4,50 €</span>
+    <ul class="acts">
+      <li><b>Les Arènes d'Arles</b> : amphithéâtre romain encore utilisé pour les courses camarguaises et férias.</li>
+      <li><b>Théâtre antique, Thermes de Constantin, Cryptoportiques, Alyscamps</b> (allée funéraire romaine) : Arles est un musée romain à ciel ouvert.</li>
+      <li><b>Sur les pas de Van Gogh</b> : l'Espace Van Gogh, le « Café la nuit » place du Forum, la Fondation Vincent Van Gogh.</li>
+      <li><b>Fondation LUMA</b> : la tour spectaculaire de Frank Gehry, art contemporain, dans le Parc des Ateliers (le parc est gratuit).</li>
+      <li><b>Musée départemental Arles antique</b> (« le Musée bleu ») : maquettes, mosaïques, barge romaine.</li>
+      <li><b>Le marché du samedi</b> : un des plus beaux et grands de Provence, le long du boulevard.</li>
+    </ul>
+    <div class="food">🍴 À goûter : le saucisson d'Arles, la gardiane de taureau, le riz de Camargue.</div>
+    <div class="time">⏱️ Temps conseillé : 1 à 2 journées.</div>
+  </div>
+
+  <div class="card city-card day">
+    <h3 style="margin-top:0">🟢 Avignon <span class="mini">— excursion à la journée (Festival 4→26 juil.)</span></h3>
+    <span class="howto">🚆 TER · ~20 min depuis Arles · dès 3 €</span>
+    <ul class="acts">
+      <li><b>Le Palais des Papes</b> : le plus grand palais gothique d'Europe, immense. Compter 1h30–2h de visite.</li>
+      <li><b>Le pont Saint-Bénézet</b> (« le pont d'Avignon ») : le pont de la chanson, sur le Rhône.</li>
+      <li><b>Le Rocher des Doms</b> : jardin en hauteur, vue sur le Rhône, le pont et le Mont Ventoux. Gratuit.</li>
+      <li><b>Place de l'Horloge, remparts, Petit Palais</b> (primitifs italiens, gratuit certains jours).</li>
+      <li><b>Pendant le Festival</b> : théâtre de rue partout (le « Off ») — ambiance électrique, mais foule et prix élevés.</li>
+      <li>Si le temps : <b>Villeneuve-lès-Avignon</b> en face (Chartreuse, fort Saint-André).</li>
+    </ul>
+    <div class="food">🍴 À goûter : les papalines d'Avignon (chocolat-liqueur), les Côtes-du-Rhône (Châteauneuf-du-Pape tout près).</div>
+    <div class="time">⏱️ Temps conseillé : 1 journée. On y dort seulement après le 26 juillet (sinon trop cher).</div>
   </div>
 
   <!-- PROGRAMME -->
